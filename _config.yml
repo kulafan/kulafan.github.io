@@ -104,3 +104,12 @@ deploy:
   type: git
   repo: git@github.com:kulafan/kulafan.github.io.git
   branch: gh-pages
+
+
+
+excerpt:			# 一定要顶格写，注意格式
+  depth: 5			# 他的大小就是全文阅读预览长度设置
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+

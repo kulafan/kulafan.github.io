@@ -1,0 +1,41 @@
+---
+title: hexo中next主题7.8版本设置阅读全文
+date: 2024-07-31 13:26:51
+tags: [hexo,blog]
+---
+
+#### next主题7.8版本设置阅读全文
+
+**问题描述：**next主题7.8版本设置阅读全文，需要下载插件，然后在主题配置文件_config.yml配置就好了。
+
+**解决办法：**
+
+- 在博客目录下执行
+
+```
+npm install hexo-excerpt --save
+```
+
+
+
+- 在站点配置文件(不是主题的配置文件)_config.yml添加
+
+```
+excerpt:			# 一定要顶格写，注意格式
+  depth: 5			# 他的大小就是全文阅读预览长度设置
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+```
+
+- 在主题配置文件中_config.yml里 excerpt_description 改为true
+
+```
+# Automatically excerpt description in homepage as preamble text.
+
+excerpt_description: true		# 一般默认为true
+```
+
+
+
+转载自：https://blog.csdn.net/CodeJoker_7/article/details/123235687
