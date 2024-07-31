@@ -32,7 +32,7 @@ APP 路径的获取方法：
 
 现象： 配置好 cos 之后，可以正常从本地推动到主窗口上传，但在剪贴板上的“等待上传” 则点击无效。
 
-![等待上传](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/202306272143857.png)
+![等待上传](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/202306272143857.png)
 
 排查方式： 打开picgo 的日志文件， 在 “主窗口--PicGo设置--设置日志文件（点击设置） -- 日志文件（点击打开）， 如果其中的报错是如下格式，可以检查一下对应目录 picgo-clipboard-images 是否存在，不存在手动创建一个
 

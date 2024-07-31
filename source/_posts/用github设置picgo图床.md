@@ -10,17 +10,17 @@ tags:
 
 ### github创建仓库
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-00e94f6eb8a93783b898fbb8e7bfffd5_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-00e94f6eb8a93783b898fbb8e7bfffd5_1440w.webp)
 
 github创建仓库管理图片
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-aeb09ef8052aa72c78b2f8df9c79e013_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-aeb09ef8052aa72c78b2f8df9c79e013_1440w.webp)
 
 github仓库创建完成
 
 **如果不想使用main分支，可以新建分支**
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-674ae3a13e13d17ad3284d995be795c7_1440w.png)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-674ae3a13e13d17ad3284d995be795c7_1440w.png)
 
 github仓库切换分支
 
@@ -36,7 +36,7 @@ github仓库切换分支
 
 > 这个token生成后只会显示一次！你要把这个token复制一下存到其他地方以备以后要用。
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-e34d517e923c3dead0ea82c0c933b688_1440w.png)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-e34d517e923c3dead0ea82c0c933b688_1440w.png)
 
 创建个人token
 
@@ -54,7 +54,7 @@ github仓库切换分支
 
 
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-80c35f4302e2bda387b4917473665056_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-80c35f4302e2bda387b4917473665056_1440w.webp)
 
 下载
 
@@ -64,19 +64,19 @@ github仓库切换分支
 
 > 仓库名的格式是用户名/仓库，比如创建一个叫做cdn_img的仓库，在PicGo里要设定的仓库名就是Sbwillbealier/cdn_img。一般选择main分支(如若选择其他分支，注意文件链接多了一级 */blob*)。
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-783cab87ea32f34c3ec56b44f97554c6_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-783cab87ea32f34c3ec56b44f97554c6_1440w.webp)
 
 PicGo设置github图床选择main分支
 
 如果需要上传到其他分支，需如下配置，此处使用了 **jsdelivr** 的CDN加速，使用见下一节
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-dfbe11b2e28b28e794a83b6836a228bc_1440w.png)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-dfbe11b2e28b28e794a83b6836a228bc_1440w.png)
 
 PicGo设置github图床选择其他分支
 
 ### PicGo设置
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-31d0058e3169fb4fd18a11e308cec2a9_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-31d0058e3169fb4fd18a11e308cec2a9_1440w.webp)
 
 PicGo设置
 
@@ -88,6 +88,6 @@ PicGo上传测试
 
 ### PicGo相册
 
-![img](https://raw.githubusercontent.com/kulafan/myPic/master/uoload/v2-d1021e4146566c0746eb4e94eb82709a_1440w.webp)
+![img](https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/v2-d1021e4146566c0746eb4e94eb82709a_1440w.webp)
 
 PicGo相册
