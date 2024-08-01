@@ -51,10 +51,10 @@ darkmode: false
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/Kulafan_logo.jpg		#favicon-16x16-next.png
+  medium: /images/Kulafan_logo.jpg	#favicon-32x32-next.png
+  apple_touch_icon: /images/Kulafan_logo.jpg	#apple-touch-icon-next.png
+  safari_pinned_tab: /images/Kulafan_logo.jpg	#logo.svg
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
@@ -144,9 +144,9 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/Kulafan_logo.jpg
   # If true, the avatar will be displayed in circle.
-  rounded: false
+  rounded: True
   # If true, the avatar will be rotated with the cursor.
   rotated: false
 
@@ -863,7 +863,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: True
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
