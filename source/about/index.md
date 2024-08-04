@@ -5,9 +5,16 @@ date: 2024-07-30 19:19:24
 
 
 
-<center>
 
-**你好！这里是****Kulafan****的blog**
+<style>
+  .center-text {
+    text-align: center;
+  }
+</style>
+<div class="center-text">
+
+
+**你好！这里是Kulafan的blog**
 
 **我是一个摄影师**
 
@@ -20,6 +27,4 @@ date: 2024-07-30 19:19:24
 还有一些折腾的教学.
 
 因为记性很差 所以在这里记录 以便日后查找
-
-</center>
-
+</div>
