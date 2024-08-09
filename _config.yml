@@ -113,3 +113,9 @@ excerpt:			# 一定要顶格写，注意格式
   more_excludes: []
   hideWholePostExcerpts: true
 
+# Search Config
+search:
+  path: search.json #之前就是这里出了问题导致图标错误，错误的教程是 search.xml
+  field: post
+  format: html
+  limit: 1000
