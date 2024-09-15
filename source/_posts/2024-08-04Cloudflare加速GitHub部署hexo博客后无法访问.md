@@ -1,7 +1,7 @@
 ---
 title: Cloudflare加速GitHub部署hexo博客后无法访问
 date: 2024-08-04 20:05:29
-categories: 折腾
+categories: [折腾,Hexo]
 tags: [折腾,HEXO]
 ---
 

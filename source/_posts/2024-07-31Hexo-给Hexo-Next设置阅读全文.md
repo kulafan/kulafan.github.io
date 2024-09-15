@@ -1,6 +1,7 @@
 ---
 title: Hexo | 给Hexo Next设置阅读全文[旧版]
 date: 2024-07-31 13:13:37
+categories: [折腾,Hexo]
 tags: [hexo,blog,折腾]
 ---
 
