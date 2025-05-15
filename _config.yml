@@ -4,9 +4,9 @@
 
 # Site
 title: Kulafan's Blog
-subtitle: 'kulafan的个人博客'
-description: ''
-keywords:
+subtitle: '库拉饭博客'
+description: '这是Kulafan 库拉饭 的个人博客 会把游戏、电脑、摄影、影视相关内容放在这里 以防自己会忘记'
+keywords: 库拉饭;kulafan;摄影;博客;建站;影视;游戏
 author: kulafan
 language: zh-CN
 timezone: ''
@@ -108,7 +108,7 @@ deploy:
 
 
 excerpt:			# 一定要顶格写，注意格式
-  depth: 2			# 他的大小就是全文阅读预览长度设置
+  depth: 3			# 他的大小就是全文阅读预览长度设置
   excerpt_excludes: []
   more_excludes: []
   hideWholePostExcerpts: true
