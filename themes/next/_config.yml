@@ -747,6 +747,20 @@ utterances:
 # For more information: https://isso-comments.de
 isso: # <data_isso>
 
+waline:
+  enable: true #是否开启
+  serverURL: waline.kulafan.com # Waline #服务端地址，就是部署的 Vercel 地址
+  locale:
+    placeholder: 无需登录·请留下邮箱以接收回复·来说两句吧~  #评论框的默认文字
+  avatar: mm # 头像风格
+  meta: [nick,mail] # 自定义评论框上面的三个输入框的内容
+  pageSize: 10 # 评论数量多少时显示分页
+  lang: zh-cn # 语言, 可选值: en, zh-cn
+  visitor: true # 文章阅读统计
+  comment_count: true # 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示
+  requiredFields: [nick] # 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]
+  libUrl:  # Set custom library cdn url
+  login: enable
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
