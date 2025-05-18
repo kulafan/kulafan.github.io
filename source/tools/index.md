@@ -29,6 +29,8 @@ NOVIP：http://www.novipnoad.com/ 看韩剧用的 没有水印 而且1080p
 
 书聚 https://ebookg.com/ 之前找一本书 找了很久 最后在这里找到了，虽然是付费的但是起码有资源
 
+Zlib https://1lib.sk/?ts=1231 
+
  
 
 其他：
