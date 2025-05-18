@@ -121,7 +121,10 @@ white-space: nowrap;
 
 友链格式示例（本站友链信息）:
 
-> 名称 : 库拉饭
-> 链接 : https://www.kulafan.com/
-> 头像 : https://www.kulafan.com/images/Kulafan_logo.jpg
-> 简介 : 一个喜欢折腾电子产品的影视工作者
+```
+名称 : 库拉饭
+简介 : 一个喜欢折腾电子产品的影视工作者
+链接 : https://www.kulafan.com/
+头像 : https://www.kulafan.com/images/Kulafan_logo.jpg
+```
+
