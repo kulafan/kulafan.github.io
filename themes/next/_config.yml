@@ -104,7 +104,7 @@ menu:
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
   tools: /tools/ || fa fa-sitemap
-  Links: /links/ || fa fa-link
+  links: /links/ || fa fa-link
   about: /about/ || fa fa-user
   
 # Enable / Disable menu icons / item badges.
@@ -931,7 +931,7 @@ vendors:
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs | custom
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-  plugins: jsdelivr #:cdnjs
+  plugins: jsdelivr #:cdnjs
   # Custom CDN URL
   # For example:
   # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
