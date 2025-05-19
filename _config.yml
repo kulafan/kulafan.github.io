@@ -119,3 +119,9 @@ search:
   field: post
   format: html
   limit: 1000
+
+# Sitemap Generator
+sitemap:
+  path: sitemap.xml
+  prettyURLs:
+    trailingSlash: false
