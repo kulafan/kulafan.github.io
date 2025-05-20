@@ -125,3 +125,10 @@ sitemap:
   path: sitemap.xml
   prettyURLs:
     trailingSlash: false
+
+
+#订阅RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: false
