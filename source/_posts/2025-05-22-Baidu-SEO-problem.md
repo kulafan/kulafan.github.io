@@ -1,8 +1,13 @@
 ---
 title: GitHubPages Cloudflare搭建博客 百度抓取失败问题修复
+categories:
+  - 折腾
+tags:
+  - SEO
+  - Hexo
+  - Blog
+abbrlink: 920523b2
 date: 2025-05-22 22:36:39
-categories: [折腾]
-tags: [SEO,Hexo,Blog]
 ---
 
 <img src="2025-05-22-Baidu-SEO-problem/wechat_2025-05-23_003105_039.png" alt="wechat_2025-05-23_003105_039" style="zoom: 67%;" />

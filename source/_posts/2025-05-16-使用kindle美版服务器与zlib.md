@@ -1,8 +1,13 @@
 ---
 title: 使用kindle美版服务器与zlib推送服务
+categories:
+  - 折腾
+  - 电子产品
+tags:
+  - 电子产品
+  - kindle
+abbrlink: a9f7a166
 date: 2025-05-16 23:35:57
-categories: [折腾,电子产品]
-tags: [电子产品,kindle]
 ---
 
 kindle的国服关闭了 不代表kindle就变砖头了.我们可以继续使用kindle的美国服务器 搭配Zlib的丰富资源拥有非常好的使用体验，其实用什么服务器真的没太大关系吧，在我们的互联网环境下，在平台上买正版电子书应该是少数用户的习惯，随着kindle关闭中国服务器 这批人也成为了正版用户的受害者。

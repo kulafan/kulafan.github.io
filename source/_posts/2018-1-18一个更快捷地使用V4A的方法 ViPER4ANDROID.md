@@ -1,10 +1,12 @@
 ---
 title: 一个更快捷地使用V4A的方法 ViPER4ANDROID
-date: 2022-11-24 20:05:29
 categories: 折腾
-tags: [折腾,音频,手机]
-
-
+tags:
+  - 折腾
+  - 音频
+  - 手机
+abbrlink: 8ba8546f
+date: 2022-11-24 20:05:29
 ---
 
 

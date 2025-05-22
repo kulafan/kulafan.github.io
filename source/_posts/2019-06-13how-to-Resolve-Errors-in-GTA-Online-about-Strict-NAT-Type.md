@@ -1,8 +1,12 @@
 ---
 title: 怎么改善GTA5的NAT类型
-date: 2024-08-01 19:54:07
 categories: 折腾
-tags: [折腾,游戏,GTA]
+tags:
+  - 折腾
+  - 游戏
+  - GTA
+abbrlink: 95600d04
+date: 2024-08-01 19:54:07
 ---
 
 转载自：[rsg.ms/nattype]()

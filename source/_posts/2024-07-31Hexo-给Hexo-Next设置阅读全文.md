@@ -1,8 +1,14 @@
 ---
-title: Hexo | 给Hexo Next设置阅读全文[旧版]
+title: 'Hexo | 给Hexo Next设置阅读全文[旧版]'
+categories:
+  - 折腾
+  - Hexo
+tags:
+  - hexo
+  - blog
+  - 折腾
+abbrlink: bb71aae1
 date: 2024-07-31 13:13:37
-categories: [折腾,Hexo]
-tags: [hexo,blog,折腾]
 ---
 
 Hexo 的 Next 主题默认是首页显示你每篇文章的全文内容，但这会使你的首页篇幅过于冗长，针对这个问题我们可以这么做：

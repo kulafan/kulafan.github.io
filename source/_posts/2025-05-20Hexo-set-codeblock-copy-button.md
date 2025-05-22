@@ -1,8 +1,11 @@
 ---
 title: 为hexo博客添加代码块复制功能
-date: 2025-05-20 20:14:03
-categories: [折腾,Hexo]
+categories:
+  - 折腾
+  - Hexo
 tags: Hexo
+abbrlink: 834d5b63
+date: 2025-05-20 20:14:03
 ---
 
 在网上找了好多方法..都没找到..后面在翻主题配置文件的时候发现，原来已经内置了这个功能...

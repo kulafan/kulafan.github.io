@@ -1,11 +1,13 @@
 ---
 title: LUX 在mac下载bilibili视频的方法
-date: 2024-08-09 19:34:29
 categories: 折腾
-tags: [折腾,Mac,媒体,视频]
-
-
-
+tags:
+  - 折腾
+  - Mac
+  - 媒体
+  - 视频
+abbrlink: de375956
+date: 2024-08-09 19:34:29
 ---
 
 方法来源于：https://github.com/iawia002/lux
