@@ -43,7 +43,7 @@ scheme: Pisces
 #scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: true
 
 
 # ---------------------------------------------------------------
@@ -762,6 +762,7 @@ waline:
   requiredFields: [nick] # 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]
   libUrl:  # Set custom library cdn url
   login: enable
+  dark: auto
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
