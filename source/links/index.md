@@ -122,7 +122,7 @@ white-space: nowrap;
 </div>
 
 <div class="card">
-   <img class="ava" src="https://www.blogger.com/profile/13450417253765997225" />
+   <img class="ava" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQ3r56z0CmIXkCquE5VQUtxtgHYy7eGDOutE-szjxm_f_sQyPst4O8KOL0osBsKc-IVJnyCPZz9w5RwH3nv-cG_B2oPYCapun7GrDX7x8VYA-YXKUEocZ8RkTRxe-h4Dc/s113/HTB1b3nIUAvoK1RjSZFNq6AxMVXai.jpg" />
    <div class="card-header">
       <div>
          <a href="https://www.jiawei.blog/">Jiawei Blog</a>
