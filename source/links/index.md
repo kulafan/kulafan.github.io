@@ -109,6 +109,58 @@ white-space: nowrap;
 <div class="info">生存是唯一的长路</div>
 </div>
 </div>
+
+
+<div class="card">
+   <img class="ava" src="https://www.boyouquan.com/assets/images/sites/logo/logo-small-dark.png" />
+   <div class="card-header">
+      <div>
+         <a href="https://www.boyouquan.com/home">博友圈</a>
+      </div>
+      <div class="info">博客人的朋友圈，博客收录与文章 RSS 聚合网站。</div>
+   </div>
+</div>
+
+<div class="card">
+   <img class="ava" src="https://www.blogger.com/profile/13450417253765997225" />
+   <div class="card-header">
+      <div>
+         <a href="https://www.jiawei.blog/">Jiawei Blog</a>
+      </div>
+      <div class="info">我思故我在</div>
+   </div>
+</div>
+
+<div class="card">
+   <img class="ava" src="https://gravatar.loli.net/avatar/64753df00cda97caea9ad8f02ad3d609?d=mp" />
+   <div class="card-header">
+      <div>
+         <a href="https://xecades.xyz/">Xecades' Neverland</a>
+      </div>
+      <div class="info">满船清梦压星河。</div>
+   </div>
+</div>
+
+<div class="card">
+   <img class="ava" src="https://blog.jask.cc/img/avatar_hu_85fe7bfde2f84794.png" />
+   <div class="card-header">
+      <div>
+         <a href="https://jask.cc/">Jask</a>
+      </div>
+      <div class="info">World terminator</div>
+   </div>
+</div>
+
+<div class="card">
+   <img class="ava" src="https://c.wpista.com/avatar/2d91d44e93b5beb840594ee956a37c4b59772bfc6e12d5dabbf56dbd9410c364?s=192&d=mm&r=x" />
+   <div class="card-header">
+      <div>
+         <a href="https://fatesinger.com/">Bigfa</a>
+      </div>
+      <div class="info">fatesinger</div>
+   </div>
+</div>
+
 </div>
 </div>
 </div>
