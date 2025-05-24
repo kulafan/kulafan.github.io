@@ -161,6 +161,27 @@ white-space: nowrap;
    </div>
 </div>
 
+<div class="card">
+   <img class="ava" src="https://pic.baike.soso.com/ugc/baikepic2/672/20200306173219-458883519_jpeg_338_270_19527.jpg/" />
+   <div class="card-header">
+      <div>
+         <a href="https://www.sslgz.net/">东莞中学松山湖学校</a>
+      </div>
+      <div class="info">为学以真 立身以诚</div>
+   </div>
+</div>
+
+<div class="card">
+   <img class="ava" src="https://www.boyouquan.com/gravatar/5e070394ebab185e00e5d079391d1f2b?size=80" />
+   <div class="card-header">
+      <div>
+         <a href="https://oneblogx.com/">彼岸临窗</a>
+      </div>
+      <div class="info"> 认真生活和写作的博主</div>
+   </div>
+</div>
+
+
 </div>
 </div>
 </div>
