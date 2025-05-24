@@ -181,6 +181,15 @@ white-space: nowrap;
    </div>
 </div>
 
+<div class="card">
+   <img class="ava" src="https://img.erq.cc/biubiu/logo.webp" />
+   <div class="card-header">
+      <div>
+         <a href="https://www.duiye.cn/">队叶成堆</a>
+      </div>
+      <div class="info"> 「堆叶博客」欢迎您！</div>
+   </div>
+</div>
 
 </div>
 </div>
