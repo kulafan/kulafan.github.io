@@ -2,8 +2,8 @@
 title: 为hexo博客添加代码块复制功能
 categories:
   - 折腾
-  - Hexo
-tags: Hexo
+  - hexo
+tags: hexo
 abbrlink: 834d5b63
 date: 2025-05-20 20:14:03
 ---

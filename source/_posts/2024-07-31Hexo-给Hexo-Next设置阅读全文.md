@@ -2,7 +2,7 @@
 title: 'Hexo | 给Hexo Next设置阅读全文[旧版]'
 categories:
   - 折腾
-  - Hexo
+  - hexo
 tags:
   - hexo
   - blog

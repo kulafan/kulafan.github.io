@@ -1,6 +1,6 @@
 ---
 title: Don't try to stand out of the crowd avoid the crowd altogether
-categories: 随笔
+categories: 杂谈
 abbrlink: d5ca4138
 date: 2018-11-05 15:15:32
 tags:

@@ -3,9 +3,9 @@ title: GitHubPages Cloudflare搭建博客 百度抓取失败问题修复
 categories:
   - 折腾
 tags:
-  - SEO
-  - Hexo
-  - Blog
+  - seo
+  - hexo
+  - blog
 abbrlink: 920523b2
 date: 2025-05-22 22:36:39
 ---

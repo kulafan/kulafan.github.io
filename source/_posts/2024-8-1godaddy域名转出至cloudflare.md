@@ -3,7 +3,7 @@ title: 域名转出至cloudflare
 categories: 折腾
 tags:
   - 折腾
-  - Hexo
+  - hexo
   - godaddy
   - 域名
 abbrlink: 35ffbacd

@@ -2,7 +2,7 @@
 title: 用github设置picgo图床
 abbrlink: '30182913'
 date: 2024-07-30 19:00:55
-tags:
+tags: 折腾
 ---
 
 
