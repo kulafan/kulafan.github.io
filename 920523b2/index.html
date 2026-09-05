@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、架构概述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHubPages Cloudflare搭建博客 百度抓取失败问题修复">
+<meta property="og:url" content="https://www.kulafan.com/920523b2/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="一、架构概述">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.kulafan.com/920523b2/wechat_2025-05-23_003105_039.png">
+<meta property="article:published_time" content="2025-05-22T14:36:39.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:40:37.807Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="seo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.kulafan.com/920523b2/wechat_2025-05-23_003105_039.png">
+
+
+<link rel="canonical" href="https://www.kulafan.com/920523b2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/920523b2/","path":"920523b2/","title":"GitHubPages Cloudflare搭建博客 百度抓取失败问题修复"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>GitHubPages Cloudflare搭建博客 百度抓取失败问题修复 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一、架构概述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number"></span> <span class="nav-text">二、常见问题与解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%8A%93%E5%8F%96%E5%A4%B1%E8%B4%A5%EF%BC%9ASocket-%E8%AF%BB%E5%86%99%E9%94%99%E8%AF%AF"><span class="nav-number">1.</span> <span class="nav-text">1. 抓取失败：Socket 读写错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-HTTPS-%E9%87%8D%E5%AE%9A%E5%90%91%E5%BC%82%E5%B8%B8"><span class="nav-number">2.</span> <span class="nav-text">2. HTTPS 重定向异常</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%9C%80%E7%BB%88%E8%90%BD%E5%9C%B0%E9%A1%B5%E6%98%AF%E5%90%A6%E4%B8%BA-HTTPS"><span class="nav-number"></span> <span class="nav-text">检查最终落地页是否为 HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-SSL-%E8%AF%81%E4%B9%A6%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%8C%B9%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">3. SSL 证书域名不匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%8A%93%E5%8F%96%E5%86%85%E5%AE%B9%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">2.</span> <span class="nav-text">4. 抓取内容与浏览器不一致</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%BB%B4%E6%8A%A4%E4%B8%8E%E7%9B%91%E6%8E%A7%E5%BB%BA%E8%AE%AE"><span class="nav-number"></span> <span class="nav-text">三、维护与监控建议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%9A%E6%9C%9F%E6%A3%80%E6%9F%A5%E9%A1%B9"><span class="nav-number">1.</span> <span class="nav-text">1. 定期检查项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7"><span class="nav-number">2.</span> <span class="nav-text">2. 自动化工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%B7%A5%E5%85%B7"><span class="nav-number"></span> <span class="nav-text">四、附录：常用命令与工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%A8%A1%E6%8B%9F%E7%99%BE%E5%BA%A6%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">1. 模拟百度蜘蛛抓取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BD%91%E7%BB%9C%E9%93%BE%E8%B7%AF%E8%AF%8A%E6%96%AD"><span class="nav-number">2.</span> <span class="nav-text">2. 网络链路诊断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%B7%A5%E5%85%B7%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">3. 工具链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/920523b2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="GitHubPages Cloudflare搭建博客 百度抓取失败问题修复 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GitHubPages Cloudflare搭建博客 百度抓取失败问题修复
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-22 22:36:39" itemprop="dateCreated datePublished" datetime="2025-05-22T22:36:39+08:00">2025-05-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/920523b2/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/920523b2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><img src="/920523b2/wechat_2025-05-23_003105_039.png" alt="wechat_2025-05-23_003105_039" style="zoom: 67%;">
+
+<h4 id="一、架构概述"><a href="#一、架构概述" class="headerlink" title="一、架构概述"></a><strong>一、架构概述</strong></h4><ul>
+<li><strong>部署平台</strong>：GitHub Pages（静态托管）</li>
+<li><strong>域名解析</strong>：Cloudflare（DNS 管理、CDN、SSL 证书）</li>
+<li><strong>目标</strong>：确保百度蜘蛛（Baiduspider）正常抓取网站内容。</li>
+</ul>
+<hr>
+<h3 id="二、常见问题与解决方案"><a href="#二、常见问题与解决方案" class="headerlink" title="二、常见问题与解决方案"></a><strong>二、常见问题与解决方案</strong></h3><h4 id="1-抓取失败：Socket-读写错误"><a href="#1-抓取失败：Socket-读写错误" class="headerlink" title="1. 抓取失败：Socket 读写错误"></a><strong>1. 抓取失败：Socket 读写错误</strong></h4><ul>
+<li><p><strong>现象</strong>：百度抓取诊断提示“socket 读写错误”。</p>
+</li>
+<li><p><strong>原因</strong>：</p>
+</li>
+<li><p>Cloudflare 防火墙拦截百度蜘蛛 IP。</p>
+</li>
+<li><p>DNS 解析不稳定或 GitHub Pages 服务器不可用。</p>
+</li>
+<li><p><strong>解决步骤</strong>：</p>
+</li>
+</ul>
+<ol>
+<li><strong>检查 Cloudflare 防火墙日志</strong>：</li>
+</ol>
+<ul>
+<li>进入 Cloudflare 控制台 → <strong>Security → Events</strong>，筛选百度蜘蛛 IP（<span class="exturl" data-url="aHR0cHM6Ly96aXl1YW4uYmFpZHUuY29tL2NvbGxlZ2UvY291cnNlaW5mbz9pZD0yNjcmcGFnZT0y">官方 IP 列表</span>）。</li>
+</ul>
+<ol>
+<li><strong>将百度蜘蛛 IP 加入白名单</strong>：</li>
+</ol>
+<ul>
+<li>Cloudflare 控制台 → <strong>Security → WAF → IP Access Rules</strong> → 添加 IP 段，选择 <code>**Allow**</code>。</li>
+</ul>
+<p><strong>验证 GitHub Pages 可用性</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I https://&lt;username&gt;.github.io # 替换为你的 GitHub Pages 地址</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="2-HTTPS-重定向异常"><a href="#2-HTTPS-重定向异常" class="headerlink" title="2. HTTPS 重定向异常"></a><strong>2. HTTPS 重定向异常</strong></h4><ul>
+<li><strong>现象</strong>：<code>**https://kulafan.github.io**</code> 重定向到 <code>**http://www.kulafan.com**</code>（不安全）。</li>
+<li><strong>原因</strong>：GitHub Pages 或 Cloudflare 未正确强制 HTTPS。</li>
+<li><strong>解决步骤</strong>：</li>
+</ul>
+<ol>
+<li><strong>GitHub Pages 配置</strong>：</li>
+</ol>
+<ul>
+<li>仓库 → <strong>Settings → Pages</strong> → 勾选 <strong>Enforce HTTPS</strong>。</li>
+</ul>
+<ol>
+<li><strong>Cloudflare 强制 HTTPS</strong>：</li>
+</ol>
+<ul>
+<li>Cloudflare 控制台 → <strong>SSL&#x2F;TLS → Edge Certificates</strong> → 开启 <strong>Always Use HTTPS</strong>。</li>
+</ul>
+<p><strong>验证重定向链路</strong>：</p>
+<ol>
+<li><p>bash</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -I https://kulafan.github.io</span><br></pre></td></tr></table></figure>
+
+<h1 id="检查最终落地页是否为-HTTPS"><a href="#检查最终落地页是否为-HTTPS" class="headerlink" title="检查最终落地页是否为 HTTPS"></a>检查最终落地页是否为 HTTPS</h1></li>
+</ol>
+<hr>
+<h4 id="3-SSL-证书域名不匹配"><a href="#3-SSL-证书域名不匹配" class="headerlink" title="3. SSL 证书域名不匹配"></a><strong>3. SSL 证书域名不匹配</strong></h4><ul>
+<li><strong>现象</strong>：<code>**curl: (60) SSL: no alternative certificate subject name matches target hostname**</code>。</li>
+<li><strong>原因</strong>：证书未绑定正确域名或 DNS 解析错误。</li>
+<li><strong>解决步骤</strong>：</li>
+</ul>
+<ol>
+<li><strong>检查 DNS 记录</strong>：</li>
+</ol>
+<ul>
+<li>Cloudflare 控制台 → <strong>DNS → Records</strong>，确认 <code>**CNAME**</code> 指向 <code>**username.github.io**</code>。</li>
+</ul>
+<ol>
+<li><strong>调整 SSL 模式</strong>：</li>
+</ol>
+<ul>
+<li>Cloudflare 控制台 → <strong>SSL&#x2F;TLS → Overview</strong> → 选择 **Full (Strict)**。</li>
+</ul>
+<p><strong>验证证书</strong>：</p>
+<p>1. </p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl s_client -connect www.kulafan.com:443 -servername www.kulafan.com | openssl x509 -noout -text</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="4-抓取内容与浏览器不一致"><a href="#4-抓取内容与浏览器不一致" class="headerlink" title="4. 抓取内容与浏览器不一致"></a><strong>4. 抓取内容与浏览器不一致</strong></h4><ul>
+<li><strong>现象</strong>：百度蜘蛛抓取内容缺失或乱码。</li>
+<li><strong>原因</strong>：缓存未更新或动态内容依赖 JavaScript。</li>
+<li><strong>解决步骤</strong>：</li>
+</ul>
+<ol>
+<li><strong>清除 Cloudflare 缓存</strong>：</li>
+</ol>
+<ul>
+<li>Cloudflare 控制台 → <strong>Caching → Purge Cache</strong> → <strong>Purge Everything</strong>。</li>
+</ul>
+<p><strong>对比内容一致性</strong>：</p>
+<ol>
+<li>bash复制下载</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -A &quot;Baiduspider&quot; https://www.kulafan.com &gt; baidu.html</span><br><span class="line">curl https://www.kulafan.com &gt; browser.html</span><br><span class="line">diff baidu.html browser.html</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>优化页面加载</strong>：</li>
+</ol>
+<ul>
+<li>对关键内容做服务端渲染（SSR），减少 JS 依赖。</li>
+</ul>
+<hr>
+<h3 id="三、维护与监控建议"><a href="#三、维护与监控建议" class="headerlink" title="三、维护与监控建议"></a><strong>三、维护与监控建议</strong></h3><h4 id="1-定期检查项"><a href="#1-定期检查项" class="headerlink" title="1. 定期检查项"></a><strong>1. 定期检查项</strong></h4><ul>
+<li><strong>SSL 证书有效期</strong>：Cloudflare 控制台 → <strong>SSL&#x2F;TLS → Edge Certificates</strong>。</li>
+<li><strong>GitHub Pages 构建状态</strong>：仓库 → <strong>Actions</strong> 或 <strong>Settings → Pages</strong>。</li>
+<li><strong>百度索引量</strong>：百度站长平台 → <strong>数据监控 → 索引量</strong>。</li>
+</ul>
+<h4 id="2-自动化工具"><a href="#2-自动化工具" class="headerlink" title="2. 自动化工具"></a><strong>2. 自动化工具</strong></h4><ul>
+<li><strong>百度主动推送</strong>：在网站代码中添加自动提交脚本（<span class="exturl" data-url="aHR0cHM6Ly96aXl1YW4uYmFpZHUuY29tL2xpbmtzdWJtaXQvaW5kZXg=">示例代码</span>）。</li>
+<li><strong>Cloudflare 报警规则</strong>：设置流量异常或安全事件通知。</li>
+</ul>
+<hr>
+<h3 id="四、附录：常用命令与工具"><a href="#四、附录：常用命令与工具" class="headerlink" title="四、附录：常用命令与工具"></a><strong>四、附录：常用命令与工具</strong></h3><h4 id="1-模拟百度蜘蛛抓取"><a href="#1-模拟百度蜘蛛抓取" class="headerlink" title="1. 模拟百度蜘蛛抓取"></a><strong>1. 模拟百度蜘蛛抓取</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -A &quot;Baiduspider&quot; -L -I https://www.kulafan.com  # 查看重定向链路</span><br><span class="line">curl -A &quot;Baiduspider&quot; https://www.kulafan.com &gt; baidu_content.html  # 保存抓取内容</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-网络链路诊断"><a href="#2-网络链路诊断" class="headerlink" title="2. 网络链路诊断"></a><strong>2. 网络链路诊断</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mtr -rw www.kulafan.com  # 检查网络延迟与丢包</span><br><span class="line">dig www.kulafan.com +trace  # 追踪 DNS 解析路径</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-工具链接"><a href="#3-工具链接" class="headerlink" title="3. 工具链接"></a><strong>3. 工具链接</strong></h4><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly96aXl1YW4uYmFpZHUuY29tLw==">百度站长平台</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kYXNoLmNsb3VkZmxhcmUuY29tLw==">Cloudflare IP 防火墙配置</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2l0aHVic3RhdHVzLmNvbS8=">GitHub Pages 状态监控</span></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/seo/" rel="tag"># seo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/834d5b63/" rel="prev" title="为hexo博客添加代码块复制功能">
+                  <i class="fa fa-angle-left"></i> 为hexo博客添加代码块复制功能
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/7919da9e/" rel="next" title="git之后nothing to commit,working tree clean 博客页面无法显示">
+                  git之后nothing to commit,working tree clean 博客页面无法显示 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/920523b2/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

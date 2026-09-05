@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. 前言HEXO安装：HEXO系列教程 | 使用GitHub部署静态博客HEXO | 小白向教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HEXO系列教程|发布文章">
+<meta property="og:url" content="https://www.kulafan.com/c13e8aa9/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="1. 前言HEXO安装：HEXO系列教程 | 使用GitHub部署静态博客HEXO | 小白向教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f8313f9de72aba98a4ad04feddef1e81_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-d8a705246df13b6d2f535f3fa4c94365_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-9bde02bec11c062e9c76d4bd30568c7c_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-cd76c448f3ddf2b3724d1d05a2130e3d_1440w.jpg">
+<meta property="og:image" content="https://picx.zhimg.com/v2-9b57545f3960b351425f049af102dd73_1440w.jpg">
+<meta property="og:image" content="https://pica.zhimg.com/v2-1f23ed0500e4fc9cda9fd40bb5df2faa_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-ae60210573e09d824016f9e0413a4673_1440w.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-0cdb3f73d7f3e2e55ae486b0e9473e13_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-41780e3b241686c43e37966d0379dd82_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-15aa8c555a892eaaa89840c148031236_1440w.jpg">
+<meta property="article:published_time" content="2025-03-04T06:58:24.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:40:37.789Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-f8313f9de72aba98a4ad04feddef1e81_1440w.jpg">
+
+
+<link rel="canonical" href="https://www.kulafan.com/c13e8aa9/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/c13e8aa9/","path":"c13e8aa9/","title":"HEXO系列教程|发布文章"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>HEXO系列教程|发布文章 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1. 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%91%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">2. 发写文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 文件名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 插入图片相关问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E9%97%AE%E9%A2%98%E5%86%8D%E7%8E%B0"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.1 问题再现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">2.2.2 使用图床（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">2.2.3 修改配置与安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">2.6.</span> <span class="nav-text">2.2.4 修复静态图片路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">2.7.</span> <span class="nav-text">2.3 创建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%86%99%E4%BD%9C"><span class="nav-number">2.8.</span> <span class="nav-text">2.4 写作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%8F%91%E5%B8%83"><span class="nav-number">3.</span> <span class="nav-text">3. 发布</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/c13e8aa9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="HEXO系列教程|发布文章 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HEXO系列教程|发布文章
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-04 14:58:24" itemprop="dateCreated datePublished" datetime="2025-03-04T14:58:24+08:00">2025-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/c13e8aa9/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/c13e8aa9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>HEXO安装：<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82ODgzNDkxNDI=">HEXO系列教程 | 使用GitHub部署静态博客HEXO | 小白向教程</span></p>
+<p>夜梦TECH同步更新地址：<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vdGVjaC55ZW1lbmdzdGFyLmNvbS9oZXhvJUU3JUIzJUJCJUU1JTg4JTk3JUU2JTk1JTk5JUU3JUE4JThCLSVFNSU4RiU5MSVFNSVCOCU4MyVFNiU5NiU4NyVFNyVBQiVBMC0lRTglQTclQTMlRTUlODYlQjMlRTklOUQlOTklRTYlODAlODElRTUlOUIlQkUlRTclODklODclRTglQjclQUYlRTUlQkUlODQlRTklOTQlOTklRTglQUYlQUYlRTklOTclQUUlRTklQTIlOTgv">HEXO系列教程 | 发布文章 | 解决静态图片路径错误问题 | 小白向教程</span></p>
+<p>使用<span class="exturl" data-url="aHR0cHM6Ly96aGlkYS56aGlodS5jb20vc2VhcmNoP2NvbnRlbnRfaWQ9MjQxMTgxNDc2JmNvbnRlbnRfdHlwZT1BcnRpY2xlJm1hdGNoX29yZGVyPTEmcT1ZVU4lRTQlQjglQkIlRTklQTIlOTgmemRfdG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKNmFHbGtZVjl6WlhKMlpYSWlMQ0psZUhBaU9qRTNOREV5TkRReU5UZ3NJbkVpT2lKWlZVN2t1THZwb3BnaUxDSjZhR2xrWVY5emIzVnlZMlVpT2lKbGJuUnBkSGtpTENKamIyNTBaVzUwWDJsa0lqb3lOREV4T0RFME56WXNJbU52Ym5SbGJuUmZkSGx3WlNJNklrRnlkR2xqYkdVaUxDSnRZWFJqYUY5dmNtUmxjaUk2TVN3aWVtUmZkRzlyWlc0aU9tNTFiR3g5LlNmM05FVEU1Z0RqLTVWeUNZSmo0MkZhaWEtc1Q1OUxmTTlzSjJtdGhSMFUmemhpZGFfc291cmNlPWVudGl0eQ==">YUN主题</span>：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vdGVjaC55ZW1lbmdzdGFyLmNvbS9oZXhvJUU3JUIzJUJCJUU1JTg4JTk3JUU2JTk1JTk5JUU3JUE4JThCLSVFOSU4NSU4RCVFNyVCRCVBRSVFNCVCQSU5MSVFNiVCOCVCOCVFNSU5MCU5Qnl1biVFNCVCOCVCQiVFOSVBMiU5OHBhcnQxLSVFNCVCQyU5OCVFOSU5QiU4NSVFNyVCRSU4RSVFOCVBNyU4Mi8=">HEXO系列教程 | 配置云游君Yun主题PART1 | 优雅美观</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vdGVjaC55ZW1lbmdzdGFyLmNvbS9oZXhvJUU3JUIzJUJCJUU1JTg4JTk3JUU2JTk1JTk5JUU3JUE4JThCLSVFOSU4NSU4RCVFNyVCRCVBRSVFNCVCQSU5MSVFNiVCOCVCOCVFNSU5MCU5Qnl1biVFNCVCOCVCQiVFOSVBMiU5OHBhcnQyLSVFNCVCQyU5OCVFOSU5QiU4NSVFNyVCRSU4RSVFOCVBNyU4Mi8=">HEXO系列教程 | 配置云游君Yun主题PART2 | 优雅美观</span></li>
+</ul>
+<p>夜梦就在这篇文章中介绍一下如何在HEXO上写文章并发布。你可以直接看官方提供的教程：<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vaGV4by5pby96aC1jbi9kb2NzL3dyaXRpbmc=">写作 | Hexo</span></p>
+<h2 id="2-发写文章"><a href="#2-发写文章" class="headerlink" title="2. 发写文章"></a>2. 发写文章</h2><h3 id="2-1-文件名称"><a href="#2-1-文件名称" class="headerlink" title="2.1 文件名称"></a>2.1 文件名称</h3><p>Hexo 默认以<strong>标题</strong>做为文件名称，但你可编辑 <code>new_post_name</code>参数来改变默认的文件名称。你只需要在<code>_config.yml</code>中修改：</p>
+<p><img src="https://pic4.zhimg.com/v2-f8313f9de72aba98a4ad04feddef1e81_1440w.jpg" alt="img"></p>
+<p>可以使用的占位符：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:title</td>
+<td>标题（小写，空格将会被替换为短杠）</td>
+<td></td>
+</tr>
+<tr>
+<td>:year</td>
+<td>建立的年份</td>
+<td>2024</td>
+</tr>
+<tr>
+<td>:month</td>
+<td>建立的月份（有前导零）</td>
+<td>04</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td>建立的月份（无前导零）</td>
+<td>4</td>
+</tr>
+<tr>
+<td>:day</td>
+<td>建立的日期（有前导零）</td>
+<td>07</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td>建立的日期（无前导零）</td>
+<td>7</td>
+</tr>
+</tbody></table>
+<p>夜梦这里举个例子，夜梦将默认存储名称修改为 <code>:year-:month-:day-:title.md</code> ，然后就可以很方便地通过日期来管理文章！</p>
+<h3 id="2-2-插入图片相关问题"><a href="#2-2-插入图片相关问题" class="headerlink" title="2.2. 插入图片相关问题"></a>2.2. 插入图片相关问题</h3><h3 id="2-2-1-问题再现"><a href="#2-2-1-问题再现" class="headerlink" title="2.2.1 问题再现"></a>2.2.1 问题再现</h3><p>为了避免后续写文章、发布文章的时候遇到图片无法加载的问题，夜梦决定把这一部分写在创建文章之前。如果不进行此部分，你可能在本地预览图片无任何问题，但是上传到Github Pages的时候无法显示，就像下面一样：</p>
+<p><img src="https://pic4.zhimg.com/v2-d8a705246df13b6d2f535f3fa4c94365_1440w.jpg" alt="img"></p>
+<p>夜梦这里提供两个办法来进行图片的插入。</p>
+<h3 id="2-2-2-使用图床（推荐）"><a href="#2-2-2-使用图床（推荐）" class="headerlink" title="2.2.2 使用图床（推荐）"></a>2.2.2 使用图床（推荐）</h3><p>最推荐的方法其实就是使用图床，这样图片可以正常显示并且不会因为本地资源的调整而出现问题。因为GitHub网络问题，如果上传过多的图片到GitHub中，加载hexo可能会很慢。使用图床就可以很好地解决这个问题。</p>
+<p>你可以使用<span class="exturl" data-url="aHR0cHM6Ly96aGlkYS56aGlodS5jb20vc2VhcmNoP2NvbnRlbnRfaWQ9MjQxMTgxNDc2JmNvbnRlbnRfdHlwZT1BcnRpY2xlJm1hdGNoX29yZGVyPTEmcT0lRTglODUlQkUlRTglQUUlQUYlRTQlQkElOTEmemRfdG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKNmFHbGtZVjl6WlhKMlpYSWlMQ0psZUhBaU9qRTNOREV5TkRReU5UZ3NJbkVpT2lMb2hiN29ycV9rdXBFaUxDSjZhR2xrWVY5emIzVnlZMlVpT2lKbGJuUnBkSGtpTENKamIyNTBaVzUwWDJsa0lqb3lOREV4T0RFME56WXNJbU52Ym5SbGJuUmZkSGx3WlNJNklrRnlkR2xqYkdVaUxDSnRZWFJqYUY5dmNtUmxjaUk2TVN3aWVtUmZkRzlyWlc0aU9tNTFiR3g5LnhKSVBRQ1M1cVhWZ1dFWG9VUmI2b3FPUjA1OWpWeVJheWYxSFAyblZDZ0kmemhpZGFfc291cmNlPWVudGl0eQ==">腾讯云</span>、阿里云的对象存储服务存储图片，然后在文章中加入图片的链接。除了腾讯云、阿里云等，夜梦还推荐使用**<span class="exturl" data-url="aHR0cHM6Ly96aGlkYS56aGlodS5jb20vc2VhcmNoP2NvbnRlbnRfaWQ9MjQxMTgxNDc2JmNvbnRlbnRfdHlwZT1BcnRpY2xlJm1hdGNoX29yZGVyPTEmcT0lRTklOUIlQTglRTQlQkElOTEmemRfdG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKNmFHbGtZVjl6WlhKMlpYSWlMQ0psZUhBaU9qRTNOREV5TkRReU5UZ3NJbkVpT2lMcG02amt1cEVpTENKNmFHbGtZVjl6YjNWeVkyVWlPaUpsYm5ScGRIa2lMQ0pqYjI1MFpXNTBYMmxrSWpveU5ERXhPREUwTnpZc0ltTnZiblJsYm5SZmRIbHdaU0k2SWtGeWRHbGpiR1VpTENKdFlYUmphRjl2Y21SbGNpSTZNU3dpZW1SZmRHOXJaVzRpT201MWJHeDkubERUU1BxdkZLX3NmejNpUk1yR2hBNVRYejlFbkxwMWdkUUk1WjBNMGc0cyZ6aGlkYV9zb3VyY2U9ZW50aXR5">雨云</span>**的对象存储服务，价格如下：</p>
+<ul>
+<li>流量：套餐内每GB <strong>0.2</strong> 元，套餐外每GB <strong>0.5</strong> 元。</li>
+<li>存储：套餐内每GB <strong>0.05</strong> 元，套餐外每GB <strong>0.12</strong> 元。</li>
+</ul>
+<p>最低13元&#x2F;月即可获得100G存储+25G流量或者是5G存储+50G流量套餐。如果关闭弹性计费，就不会产生额外费用，不用担心被攻击以后产生的天价账单。</p>
+<p>雨云优惠注册链接（长期九折+首月五折优惠）：<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzOi8vd3d3LnJhaW55dW4uY29tL1llTWVuZ18=">https://www.rainyun.com/</span></p>
+<h3 id="2-2-3-修改配置与安装插件"><a href="#2-2-3-修改配置与安装插件" class="headerlink" title="2.2.3 修改配置与安装插件"></a>2.2.3 修改配置与安装插件</h3><p>你也可以通过修改配置并安装插件的方法完成图片的插入。你需要<strong>修改站点配置</strong><code>_config.yml</code>，将<code>post_asset_folder</code>设置为<code>true</code>，如下图：</p>
+<p><img src="https://pic1.zhimg.com/v2-9bde02bec11c062e9c76d4bd30568c7c_1440w.jpg" alt="img"></p>
+<p>然后安装插件：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image -- save</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-4-修复静态图片路径"><a href="#2-2-4-修复静态图片路径" class="headerlink" title="2.2.4 修复静态图片路径"></a>2.2.4 修复静态图片路径</h3><p>如果你使用的是插件，当生成预览的时候，可能依旧无法正常查看图片。</p>
+<p><img src="https://pic4.zhimg.com/v2-cd76c448f3ddf2b3724d1d05a2130e3d_1440w.jpg" alt="img"></p>
+<p>通过直接查看HTML文件，我们可以看到是因为多了&#x2F;.com&#x2F;，所以在加载图片的时候无法获得正确的路径。</p>
+<p><img src="https://picx.zhimg.com/v2-9b57545f3960b351425f049af102dd73_1440w.jpg" alt="img"></p>
+<p>具体的修改也很简单，我们只需要到<code>node_modules</code>中找到<code>hexo-asset-image</code>，并将58、89行的</p>
+<p><img src="https://pica.zhimg.com/v2-1f23ed0500e4fc9cda9fd40bb5df2faa_1440w.jpg" alt="img"></p>
+<p>修改为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(this).attr(&#x27;src&#x27;, src);</span><br><span class="line">console.info &amp;&amp; console.info(&quot;update link as:--&gt;&quot; + src);</span><br></pre></td></tr></table></figure>
+
+<p>如下图：</p>
+<p><img src="https://pic4.zhimg.com/v2-ae60210573e09d824016f9e0413a4673_1440w.jpg" alt="img"></p>
+<p>不出意外的话，就可以看到正常显示的图片了：</p>
+<p><img src="https://pic2.zhimg.com/v2-0cdb3f73d7f3e2e55ae486b0e9473e13_1440w.jpg" alt="img"></p>
+<h3 id="2-3-创建文章"><a href="#2-3-创建文章" class="headerlink" title="2.3 创建文章"></a>2.3 创建文章</h3><p>在HEXO目录下，打开GIT BASH HERE，你可以直接使用下面的命令创建新的文章：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 标准格式如下</span><br><span class="line"># hexo new post &lt;title&gt;</span><br><span class="line"># 夜梦这里举例</span><br><span class="line">hexo new post HEXO博客的初步使用</span><br></pre></td></tr></table></figure>
+
+<p>创建完成，可以在终端里面看到提示：</p>
+<p><img src="https://pic1.zhimg.com/v2-41780e3b241686c43e37966d0379dd82_1440w.jpg" alt="img"></p>
+<p>文章post的存储路径：<code>source/_posts</code>。因为我们安装了插件，所以在同一目录下，会生成一个和文章名字一样的文件夹。</p>
+<p><img src="https://pic1.zhimg.com/v2-15aa8c555a892eaaa89840c148031236_1440w.jpg" alt="img"></p>
+<h3 id="2-4-写作"><a href="#2-4-写作" class="headerlink" title="2.4 写作"></a>2.4 写作</h3><p>写作就很简单了，在.md文件里面直接用markdown语法写就可以了。</p>
+<p>如果需要引用本地图片地话，需要把图片放到我们只需要把图片放到与文章同名的文件夹中，然后直接引用~</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![yourDescription](yourPostTitle/yourImage.png) # 假如你的文章名是yourPostTitle，图片名字是yourImage.png</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-发布"><a href="#3-发布" class="headerlink" title="3. 发布"></a>3. 发布</h2><p>写完以后保存.md文件，然后运行</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>本地预览。无误后，你可以执行</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>发布到github pages上。夜梦演示的效果如下图：</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/3bc9b874/" rel="prev" title="FinalCutPro插件路径">
+                  <i class="fa fa-angle-left"></i> FinalCutPro插件路径
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/ab9a2788/" rel="next" title="为博客添加评论区功能">
+                  为博客添加评论区功能 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/c13e8aa9/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

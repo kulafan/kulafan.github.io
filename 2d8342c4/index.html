@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在使用 Waline 官方组件时，通过增加count参数改变评论显示数量，具体操作因使用场景（如博客框架类型）而异，以下为常见场景下的教程： 基于 Hexo 框架（以集成 Next 主题为例）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="waline 访客记录">
+<meta property="og:url" content="https://www.kulafan.com/2d8342c4/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="在使用 Waline 官方组件时，通过增加count参数改变评论显示数量，具体操作因使用场景（如博客框架类型）而异，以下为常见场景下的教程： 基于 Hexo 框架（以集成 Next 主题为例）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-13T15:05:00.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:41:27.218Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.kulafan.com/2d8342c4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/2d8342c4/","path":"2d8342c4/","title":"waline 访客记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>waline 访客记录 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-Hexo-%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BB%A5%E9%9B%86%E6%88%90-Next-%E4%B8%BB%E9%A2%98%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">基于 Hexo 框架（以集成 Next 主题为例）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E8%AF%84%E8%AE%BA%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%9A%E5%91%BD%E5%90%8D%E4%B8%BAfetch-js"><span class="nav-number"></span> <span class="nav-text">抓取评论数据的代码：命名为fetch.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BF%E5%AE%A2%E5%88%97%E8%A1%A8%E9%A1%B5%E9%9D%A2"><span class="nav-number"></span> <span class="nav-text">访客列表页面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEgithub-action-%E5%AE%9A%E6%97%B6%E8%87%AA%E5%8A%A8%E6%8A%93%E5%8F%96"><span class="nav-number"></span> <span class="nav-text">设置github action 定时自动抓取</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2d8342c4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="waline 访客记录 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          waline 访客记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-07-13 23:05:00" itemprop="dateCreated datePublished" datetime="2025-07-13T23:05:00+08:00">2025-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BLOG/" itemprop="url" rel="index"><span itemprop="name">BLOG</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2d8342c4/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2d8342c4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在使用 Waline 官方组件时，通过增加<code>count</code>参数改变评论显示数量，具体操作因使用场景（如博客框架类型）而异，以下为常见场景下的教程：</p>
+<h3 id="基于-Hexo-框架（以集成-Next-主题为例）"><a href="#基于-Hexo-框架（以集成-Next-主题为例）" class="headerlink" title="基于 Hexo 框架（以集成 Next 主题为例）"></a><strong>基于 Hexo 框架（以集成 Next 主题为例）</strong></h3><ol>
+<li><strong>找到配置文件</strong>：在 Hexo 根目录下的<code>node_modules/@waline</code>中找到<code>default.yaml</code>文件，这里面包含了 Waline 的所有设置选项。同时，为了方便管理，通常会将需要修改的选项手动写入到 Next 主题下的<code>_config.yml</code>文件中。</li>
+<li><strong>增加或修改</strong><code>**count**</code><strong>参数</strong>：打开<code>_config.yml</code>文件，找到<code>waline</code>配置部分，如果没有则添加。在其中增加<code>count</code>参数并设置期望的值，比如设置为显示 20 条评论：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">waline</span>:</span><br><span class="line">  <span class="attr">enable</span>: <span class="literal">true</span> # 是否开启</span><br><span class="line">  <span class="attr">serverurl</span>: waline-server-ecru.<span class="property">vercel</span>.<span class="property">app</span> # waline服务端地址</span><br><span class="line">  <span class="attr">locale</span>:</span><br><span class="line">    <span class="attr">placeholder</span>: 疑义相与析，畅所欲言，不登录也没关系哒 # 评论框的默认文字</span><br><span class="line">  <span class="attr">avatar</span>: mm # 头像风格</span><br><span class="line">  <span class="attr">meta</span>: (nick,mail) # 自定义评论框上面的三个输入框的内容</span><br><span class="line">  <span class="attr">pagesize</span>: <span class="number">20</span> # 这里将评论数量修改为<span class="number">20</span></span><br><span class="line">  <span class="attr">lang</span>: zh-cn # 语言,可选值: en,zh-cn</span><br><span class="line">  <span class="attr">visitor</span>: <span class="literal">true</span> # 文章阅读统计</span><br><span class="line">  <span class="attr">comment_count</span>: <span class="literal">true</span> # 如果为<span class="literal">false</span>,评论数量只会在当前评论页面显示,主页则不显示</span><br><span class="line">  <span class="attr">requiredfields</span>: (nick) # 设置用户评论时必填的信息，(nick,mail):(nick)|(nick,mail)</span><br><span class="line">  <span class="attr">liburl</span>: <span class="attr">https</span>:<span class="comment">//unpkg.com/@waline/client@v2/dist/waline.js # set custom library cdn url</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><span class="exturl" data-url="aHR0cHM6Ly93YWxpbmUua3VsYWZhbi5jb20vY29tbWVudD90eXBlPXJlY2VudA==">https://waline_server&#x2F;comment?type&#x3D;recent</span></p>
+<p>但是这样有个严重的问题，就是通过上面的这个地址每次只能抓取最近的10条评论。</p>
+<p>所以我有了另外一个思路，就是抓取每个页面里的评论内容，生成一个总的文件，这样就能直接通过统计这个文件里的评论内容来整理出访客记录了。</p>
+<h1 id="抓取评论数据的代码：命名为fetch-js"><a href="#抓取评论数据的代码：命名为fetch-js" class="headerlink" title="抓取评论数据的代码：命名为fetch.js"></a>抓取评论数据的代码：命名为fetch.js</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>).<span class="property">promises</span>;</span><br><span class="line"><span class="keyword">const</span> fetch = <span class="built_in">require</span>(<span class="string">&#x27;node-fetch&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="variable constant_">JSDOM</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;jsdom&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">SITEMAP_URL</span> = “your sitemap<span class="string">&quot;;</span></span><br><span class="line"><span class="string">const WALINE_SERVER = &quot;</span>your comment server<span class="string">&quot;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 从 URL 提取路径</span></span><br><span class="line"><span class="string">function urlToAbbrlinkPath(url) &#123;</span></span><br><span class="line"><span class="string">  try &#123;</span></span><br><span class="line"><span class="string">    const u = new URL(url);</span></span><br><span class="line"><span class="string">    return u.pathname.match(/^\/[a-z0-9]+\/$/)?.[0] || null;</span></span><br><span class="line"><span class="string">  &#125; catch &#123;</span></span><br><span class="line"><span class="string">    return null;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 获取单个页面的评论</span></span><br><span class="line"><span class="string">async function fetchCommentsForPath(path) &#123;</span></span><br><span class="line"><span class="string">  const pageSize = 100;</span></span><br><span class="line"><span class="string">  let page = 1;</span></span><br><span class="line"><span class="string">  let allComments = [];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  while (true) &#123;</span></span><br><span class="line"><span class="string">    const res = await fetch(`$&#123;WALINE_SERVER&#125;/comment?type=comment&amp;page=$&#123;page&#125;&amp;pageSize=$&#123;pageSize&#125;&amp;path=$&#123;encodeURIComponent(path)&#125;`);</span></span><br><span class="line"><span class="string">    const data = await res.json();</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    if (!data || !data.data || data.data.length === 0) break;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    // 为每条评论添加 path 信息</span></span><br><span class="line"><span class="string">    const commentsWithPath = data.data.map(comment =&gt; (&#123;</span></span><br><span class="line"><span class="string">      ...comment,</span></span><br><span class="line"><span class="string">      path</span></span><br><span class="line"><span class="string">    &#125;));</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    allComments.push(...commentsWithPath);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    if (data.data.length &lt; pageSize) break;</span></span><br><span class="line"><span class="string">    page++;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  return allComments;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 获取评论的回复</span></span><br><span class="line"><span class="string">async function fetchRepliesForComment(comment) &#123;</span></span><br><span class="line"><span class="string">  const pageSize = 100;</span></span><br><span class="line"><span class="string">  let page = 1;</span></span><br><span class="line"><span class="string">  let replies = [];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  while (true) &#123;</span></span><br><span class="line"><span class="string">    const res = await fetch(`$&#123;WALINE_SERVER&#125;/comment?type=reply&amp;page=$&#123;page&#125;&amp;pageSize=$&#123;pageSize&#125;&amp;parent=$&#123;comment._id&#125;`);</span></span><br><span class="line"><span class="string">    const data = await res.json();</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    if (!data || !data.data || data.data.length === 0) break;</span></span><br><span class="line"><span class="string">    replies.push(...data.data);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    if (data.data.length &lt; pageSize) break;</span></span><br><span class="line"><span class="string">    page++;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  return replies;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 解析 sitemap 获取所有页面路径</span></span><br><span class="line"><span class="string">async function fetchSitemapPaths() &#123;</span></span><br><span class="line"><span class="string">  const res = await fetch(SITEMAP_URL);</span></span><br><span class="line"><span class="string">  const xml = await res.text();</span></span><br><span class="line"><span class="string">  const dom = new JSDOM(xml, &#123; contentType: &quot;</span>application/xml<span class="string">&quot; &#125;);</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  const urls = Array.from(dom.window.document.querySelectorAll(&#x27;url &gt; loc&#x27;))</span></span><br><span class="line"><span class="string">    .map(url =&gt; url.textContent.trim());</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  return urls</span></span><br><span class="line"><span class="string">    .map(urlToAbbrlinkPath)</span></span><br><span class="line"><span class="string">    .filter(Boolean)</span></span><br><span class="line"><span class="string">    .filter((path, index, self) =&gt; self.indexOf(path) === index); // 去重</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 主函数：抓取所有页面的评论及回复</span></span><br><span class="line"><span class="string">async function fetchAllComments() &#123;</span></span><br><span class="line"><span class="string">  const paths = await fetchSitemapPaths();</span></span><br><span class="line"><span class="string">  let allComments = [];</span></span><br><span class="line"><span class="string">  const concurrency = 5; // 并发请求数量</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  for (let i = 0; i &lt; paths.length; i += concurrency) &#123;</span></span><br><span class="line"><span class="string">    const batchPaths = paths.slice(i, i + concurrency);</span></span><br><span class="line"><span class="string">    console.log(`处理第 $&#123;i+1&#125;-$&#123;Math.min(i+concurrency, paths.length)&#125; 条路径（共 $&#123;paths.length&#125; 条）`);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    const batchResults = await Promise.all(</span></span><br><span class="line"><span class="string">      batchPaths.map(async path =&gt; &#123;</span></span><br><span class="line"><span class="string">        try &#123;</span></span><br><span class="line"><span class="string">          const comments = await fetchCommentsForPath(path);</span></span><br><span class="line"><span class="string">          console.log(`成功获取 $&#123;path&#125; 的 $&#123;comments.length&#125; 条评论`);</span></span><br><span class="line"><span class="string">          return comments;</span></span><br><span class="line"><span class="string">        &#125; catch (error) &#123;</span></span><br><span class="line"><span class="string">          console.warn(`跳过路径 $&#123;path&#125;: $&#123;error.message&#125;`);</span></span><br><span class="line"><span class="string">          return [];</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;)</span></span><br><span class="line"><span class="string">    );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    allComments.push(...batchResults.flat());</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  // 为每条评论获取回复</span></span><br><span class="line"><span class="string">  console.log(&quot;</span>开始获取评论回复...<span class="string">&quot;);</span></span><br><span class="line"><span class="string">  const commentsWithReplies = await Promise.all(</span></span><br><span class="line"><span class="string">    allComments.map(async comment =&gt; &#123;</span></span><br><span class="line"><span class="string">      const replies = await fetchRepliesForComment(comment);</span></span><br><span class="line"><span class="string">      return &#123; ...comment, replies &#125;;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  return commentsWithReplies;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 保存评论数据到 JSON 文件</span></span><br><span class="line"><span class="string">async function main() &#123;</span></span><br><span class="line"><span class="string">  try &#123;</span></span><br><span class="line"><span class="string">    console.log(&quot;</span>开始抓取所有评论...<span class="string">&quot;);</span></span><br><span class="line"><span class="string">    const comments = await fetchAllComments();</span></span><br><span class="line"><span class="string">    console.log(`共抓取到 $&#123;comments.length&#125; 条评论`);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    await fs.writeFile(&#x27;source/comments.json&#x27;, JSON.stringify(comments, null, 2));</span></span><br><span class="line"><span class="string">    console.log(&quot;</span>评论数据已保存到 comments.<span class="property">json</span><span class="string">&quot;);</span></span><br><span class="line"><span class="string">  &#125; catch (error) &#123;</span></span><br><span class="line"><span class="string">    console.error(&quot;</span>抓取评论失败:<span class="string">&quot;, error);</span></span><br><span class="line"><span class="string">    process.exit(1);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">main();</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="访客列表页面"><a href="#访客列表页面" class="headerlink" title="访客列表页面"></a>访客列表页面</h1><p>在页面上添加下面的代码，就能识别到抓取的全部评论</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;visitors&quot;</span> <span class="attr">class</span>=<span class="string">&quot;visitors-container&quot;</span>&gt;</span>加载中…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitors-container</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: grid;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, <span class="built_in">minmax</span>(<span class="number">80px</span>, <span class="number">1</span>fr));</span></span><br><span class="line"><span class="language-css">    <span class="attribute">gap</span>: <span class="built_in">clamp</span>(<span class="number">8px</span>, <span class="number">3vw</span>, <span class="number">16px</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>; <span class="comment">/* 增加边距防止内容贴边 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitor</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">flex-direction</span>: column;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--background-hover, <span class="built_in">rgba</span>(<span class="number">255</span> <span class="number">255</span> <span class="number">255</span> / <span class="number">0.05</span>));</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">6px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitor</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">3px</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--background-hover, <span class="built_in">rgba</span>(<span class="number">255</span> <span class="number">255</span> <span class="number">255</span> / <span class="number">0.1</span>));</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitor</span> <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">48px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">48px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="built_in">var</span>(--border-color, <span class="number">#555</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: border-color <span class="number">0.3s</span> ease;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">object-fit</span>: cover; <span class="comment">/* 确保头像不变形 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitor-name</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-top</span>: <span class="number">6px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-weight</span>: bold;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: <span class="built_in">var</span>(--text-color, <span class="number">#eee</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: color <span class="number">0.3s</span> ease;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">white-space</span>: nowrap;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.visitor-count</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: <span class="built_in">var</span>(--text-secondary-color, <span class="number">#bbb</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: color <span class="number">0.3s</span> ease;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="comment">/* 移动端适配 */</span></span></span><br><span class="line"><span class="language-css">  <span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.visitors-container</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, <span class="built_in">minmax</span>(<span class="number">65px</span>, <span class="number">1</span>fr));</span></span><br><span class="line"><span class="language-css">      <span class="attribute">gap</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.visitor</span> <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.visitor-name</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.visitor-count</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="comment">/* 骨架屏加载状态 */</span></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.skeleton</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(<span class="number">90deg</span>, <span class="number">#f0f0f0</span> <span class="number">25%</span>, <span class="number">#e0e0e0</span> <span class="number">50%</span>, <span class="number">#f0f0f0</span> <span class="number">75%</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">animation</span>: skeleton-loading <span class="number">1.5s</span> infinite;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  </span></span><br><span class="line"><span class="language-css">  <span class="keyword">@keyframes</span> skeleton-loading &#123;</span></span><br><span class="line"><span class="language-css">    <span class="number">0%</span> &#123; <span class="attribute">background-position</span>: <span class="number">200%</span> <span class="number">0</span>; &#125;</span></span><br><span class="line"><span class="language-css">    <span class="number">100%</span> &#123; <span class="attribute">background-position</span>: -<span class="number">200%</span> <span class="number">0</span>; &#125;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  const WALINE_SERVER = &quot;https://your server&quot;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  const visitorsElement = document.getElementById(&quot;visitors&quot;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  // 显示骨架屏</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  function showSkeleton() &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    let skeletonHTML = &#x27;&#x27;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    for (let i = 0; i &lt; 12; i++) &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      skeletonHTML += `</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;visitor&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;skeleton&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 48px; height: 48px; border-radius: 50%;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;skeleton&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 80%; height: 16px; margin-top: 8px; border-radius: 4px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;skeleton&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 60%; height: 12px; margin-top: 4px; border-radius: 4px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      `;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    visitorsElement.innerHTML = skeletonHTML;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  // 初始显示骨架屏</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  showSkeleton();</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  fetch(`/comments.json?v=$&#123;Date.now()&#125;`) // 添加时间戳防止缓存</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    .then(res =&gt; &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      if (!res.ok) throw new Error(`HTTP错误，状态码: $&#123;res.status&#125;`);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      return res.json();</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;)</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    .then(comments =&gt; &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      if (!Array.isArray(comments) || comments.length === 0) &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        throw new Error(&#x27;评论数据为空&#x27;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      const visitors = &#123;&#125;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      comments.forEach(comment =&gt; &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        const key = comment.mail || comment.nick;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        if (!visitors[key]) &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          visitors[key] = &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            nick: comment.nick || &#x27;匿名用户&#x27;,</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            avatar: comment.avatar || &#x27;https://picsum.photos/48/48&#x27;,</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            count: 0,</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            link: comment.link || &#x27;#&#x27;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          &#125;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        visitors[key].count++;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      &#125;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      const sorted = Object.values(visitors).sort((a, b) =&gt; b.count - a.count);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      if (sorted.length === 0) &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        throw new Error(&#x27;没有找到评论用户&#x27;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      const html = sorted.map(v =&gt; `</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;visitor&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;$&#123;v.link&#125;&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener noreferrer&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;$&#123;v.avatar&#125;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;$&#123;v.nick&#125;&quot;</span> <span class="attr">onerror</span>=<span class="string">&quot;this.src=&#x27;https://picsum.photos/48/48?random=$&#123;Math.random()&#125;&#x27;&quot;</span> /&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;visitor-name&quot;</span>&gt;</span>$&#123;v.nick&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;visitor-count&quot;</span>&gt;</span>$&#123;v.count&#125; 评论<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      `).join(&#x27;&#x27;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      </span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      visitorsElement.innerHTML = html;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;)</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    .catch(error =&gt; &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      console.error(&#x27;加载访客评论失败:&#x27;, error);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      visitorsElement.innerHTML = `</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;text-align:center;padding:20px;color:var(--text-secondary-color);&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;24&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24&quot;</span> <span class="attr">viewBox</span>=<span class="string">&quot;0 0 24 24&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;none&quot;</span> <span class="attr">stroke</span>=<span class="string">&quot;currentColor&quot;</span> <span class="attr">stroke-width</span>=<span class="string">&quot;2&quot;</span> <span class="attr">stroke-linecap</span>=<span class="string">&quot;round&quot;</span> <span class="attr">stroke-linejoin</span>=<span class="string">&quot;round&quot;</span> <span class="attr">class</span>=<span class="string">&quot;feather feather-alert-circle&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;12&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;12&quot;</span> <span class="attr">r</span>=<span class="string">&quot;10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            <span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">&quot;12&quot;</span> <span class="attr">y1</span>=<span class="string">&quot;8&quot;</span> <span class="attr">x2</span>=<span class="string">&quot;12&quot;</span> <span class="attr">y2</span>=<span class="string">&quot;12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">line</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            <span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">&quot;12&quot;</span> <span class="attr">y1</span>=<span class="string">&quot;16&quot;</span> <span class="attr">x2</span>=<span class="string">&quot;12.01&quot;</span> <span class="attr">y2</span>=<span class="string">&quot;16&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">line</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;margin-top:10px;&quot;</span>&gt;</span>加载评论数据失败，请稍后再试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-size:12px;margin-top:5px;&quot;</span>&gt;</span>错误: $&#123;error.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">      `;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="设置github-action-定时自动抓取"><a href="#设置github-action-定时自动抓取" class="headerlink" title="设置github action 定时自动抓取"></a>设置github action 定时自动抓取</h1><p>因为这个需要手动执行fetch.js才能拉取每个页面的评论，所以最好添加到githuba ction的workflow里面，让它定期获取。</p>
+<p>我的github action现在每小时都会获取一遍notion上的文章，就直接把获取评论数据的命令也加进去，每个小时也会顺便拉取一次评论数据。</p>
+<p>我唯一需要担心的就是随着时间越来越长，抓取的时间会增加。。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/b478845c/" rel="prev" title="mac开机出现问号文件夹 support.apple/mac/startup">
+                  <i class="fa fa-angle-left"></i> mac开机出现问号文件夹 support.apple/mac/startup
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2ac12299/" rel="next" title="把公众号内容抓取到hexo博客上">
+                  把公众号内容抓取到hexo博客上 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/2d8342c4/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

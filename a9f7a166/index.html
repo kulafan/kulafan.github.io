@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kindle的国服关闭了 不代表kindle就变砖头了.我们可以继续使用kindle的美国服务器 搭配Zlib的丰富资源拥有非常好的使用体验。 其实用什么服务器真的没太大关系吧，在我们的互联网环境下，在平台上买正版电子书应该是少数用户的习惯，随着kindle关闭中国服务器 这批人也成为了正版用户的受害者。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用kindle美版服务器与zlib推送服务">
+<meta property="og:url" content="https://www.kulafan.com/a9f7a166/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="kindle的国服关闭了 不代表kindle就变砖头了.我们可以继续使用kindle的美国服务器 搭配Zlib的丰富资源拥有非常好的使用体验。 其实用什么服务器真的没太大关系吧，在我们的互联网环境下，在平台上买正版电子书应该是少数用户的习惯，随着kindle关闭中国服务器 这批人也成为了正版用户的受害者。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/kindlesetting1.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/kindlesetting2.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/kindlesetting3.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/zhuce.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/zhuce2.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/zlib3.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/sendto.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/thumbnail_D600612B@DE9C3A48.4763276800000000.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/7c63621774acf852cdcc13525d64aced.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/9503d3b5662175fb3922ded11eccda57.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/b7eb718fa0565c6280ae8abc27209a21.jpg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/1747894335640-91447577-ec76-4286-9a87-6e4b65b471e7.jpeg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/1747894335401-394c7225-e567-4961-a483-f65bafa1fccb.jpeg">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/1747894335351-24059523-5499-4faf-95a6-ab38d5e3b2fa.png">
+<meta property="og:image" content="https://www.kulafan.com/a9f7a166/1747894335466-511a35cb-eb5e-462e-b52d-e359f7a38956.png">
+<meta property="article:published_time" content="2025-05-16T15:35:57.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:40:37.790Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="电子产品">
+<meta property="article:tag" content="kindle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.kulafan.com/a9f7a166/kindlesetting1.png">
+
+
+<link rel="canonical" href="https://www.kulafan.com/a9f7a166/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/a9f7a166/","path":"a9f7a166/","title":"使用kindle美版服务器与zlib推送服务"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用kindle美版服务器与zlib推送服务 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-kindle%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">2.kindle服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1%E6%B3%A8%E5%86%8C%E7%BE%8E%E6%9C%8Dkindle%E8%B4%A6%E6%88%B7"><span class="nav-number">2.1.</span> <span class="nav-text">2.1注册美服kindle账户</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Z-library"><span class="nav-number">3.</span> <span class="nav-text">3.Z-library</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1%E6%B3%A8%E5%86%8CZ-lib%E8%B4%A6%E6%88%B7"><span class="nav-number">3.1.</span> <span class="nav-text">3.1注册Z-lib账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2%E6%90%9C%E7%B4%A2%E5%92%8C%E4%B8%8B%E8%BD%BD%E4%B9%A6%E7%B1%8D"><span class="nav-number">3.2.</span> <span class="nav-text">3.2搜索和下载书籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E9%80%9A%E8%BF%87%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 通过邮箱发送（推荐）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E9%80%9A%E8%BF%87%E6%89%8B%E6%9C%BAapp%E5%8F%91%E9%80%81"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 通过手机app发送</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/a9f7a166/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用kindle美版服务器与zlib推送服务 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用kindle美版服务器与zlib推送服务
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-16 23:35:57" itemprop="dateCreated datePublished" datetime="2025-05-16T23:35:57+08:00">2025-05-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/" itemprop="url" rel="index"><span itemprop="name">电子产品</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/a9f7a166/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/a9f7a166/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>kindle的国服关闭了 不代表kindle就变砖头了.我们可以继续使用kindle的美国服务器 搭配Zlib的丰富资源拥有非常好的使用体验。</p>
+<p>其实用什么服务器真的没太大关系吧，在我们的互联网环境下，在平台上买正版电子书应该是少数用户的习惯，随着kindle关闭中国服务器 这批人也成为了正版用户的受害者。</p>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>说实话，kindle真的是一个牛逼的产品，因为他能让很多不看书的人去购买，也能让很多人以为买了kindle就会看书，真的是当代的“电子赎罪券”之一。不过即使如此，非重度用户拿kindle发挥一些作用也是可以的。</p>
+<h1 id="2-kindle服务"><a href="#2-kindle服务" class="headerlink" title="2.kindle服务"></a>2.kindle服务</h1><h2 id="2-1注册美服kindle账户"><a href="#2-1注册美服kindle账户" class="headerlink" title="2.1注册美服kindle账户"></a>2.1注册美服kindle账户</h2><p>这个步骤非常简单 进入<span class="exturl" data-url="aHR0cDovL3d3dy5hbWF6b24uY29t5Lqa6ams6YCK55qE576O5Zu95Z+f5ZCN5rOo5YaM5Y+v5Lul5L2/55So5Zu95YaF6YKu566xLw==">www.amazon.com亚马逊的美国域名注册可以使用国内邮箱</span></p>
+<p>2.2 设置kindle推送邮箱</p>
+<p>进入 <span class="exturl" data-url="aHR0cDovL3d3dy5hbWF6b24uY29tL215ay8=">www.amazon.com/myk/</span> 设置kindle的推送服务</p>
+<img src="/a9f7a166/kindlesetting1.png" alt="kindlesetting1">
+
+<p>进入偏好 然后拉到最下面 设置@kindle的邮箱 （这里以<span class="exturl" data-url="bWFpbHRvOiYjMTE1OyYjeDYxOyYjMTA5OyYjMTEyOyYjMTA4OyYjMTAxOyYjNjQ7JiN4NmI7JiMxMDU7JiMxMTA7JiMxMDA7JiN4NmM7JiMxMDE7JiM0NjsmIzk5OyYjeDZmOyYjeDZkOw==">&#115;&#x61;&#109;&#112;&#108;&#101;&#64;&#x6b;&#105;&#110;&#100;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</span>为例）</p>
+<img src="/a9f7a166/kindlesetting2.png" alt="kindlesetting2">
+
+<p>设置完kindle的接受邮箱之后 要往下拉 设置用来发送书的邮箱，这里我是设置成注册zlib的邮箱，这样就可以直接用zlib的邮箱接收书，直接转发到kindle邮箱上</p>
+<img src="/a9f7a166/kindlesetting3.png" alt="kindlesetting3">
+
+<h1 id="3-Z-library"><a href="#3-Z-library" class="headerlink" title="3.Z-library"></a>3.Z-library</h1><p>进入zlib的官网<span class="exturl" data-url="aHR0cHM6Ly8xbGliLnNrLz90cz0xOTA0">https://1lib.sk/?ts=1904</span></p>
+<p>因为zlib经常更换域名，所以我都是在手机上下载zlib的应用，如果官网出现无法访问的情况 我就可以通过app进入最新的官网。</p>
+<p>通过这个网站找到最新的地址 <strong><span class="exturl" data-url="aHR0cHM6Ly96aC5nby10by1saWJyYXJ5LnNrLw==">https://zh.go-to-library.sk/</span></strong></p>
+<p><strong>zlib很多盗版网站，一定要注意!!!!!</strong></p>
+<h2 id="3-1注册Z-lib账户"><a href="#3-1注册Z-lib账户" class="headerlink" title="3.1注册Z-lib账户"></a>3.1注册Z-lib账户</h2><img src="/a9f7a166/zhuce.jpg" alt="zhuce" style="zoom:50%;">
+
+<p>点开官网的右上角</p>
+<img src="/a9f7a166/zhuce2.jpg" alt="zhuce2" style="zoom:50%;">
+
+<p>点create就能创建账户了</p>
+<p>然后就可以用注册的账户来登录</p>
+<h2 id="3-2搜索和下载书籍"><a href="#3-2搜索和下载书籍" class="headerlink" title="3.2搜索和下载书籍"></a>3.2搜索和下载书籍</h2><img src="/a9f7a166/zlib3.png" alt="zlib3" style="zoom: 50%;">
+
+<p>直接在搜索框里输入书的名字 然后点击进去</p>
+<img src="/a9f7a166/sendto.png" alt="sendto" style="zoom: 50%;">
+
+<p>点击右下角的send to mail 或者 下载图标 对应不同的方法</p>
+<h2 id="3-3-通过邮箱发送（推荐）"><a href="#3-3-通过邮箱发送（推荐）" class="headerlink" title="3.3 通过邮箱发送（推荐）"></a>3.3 通过邮箱发送（推荐）</h2><img src="/a9f7a166/thumbnail_D600612B@DE9C3A48.4763276800000000.jpg" alt="thumbnail_D600612B@DE9C3A48.4763276800000000" style="zoom: 25%;">
+
+<p>在邮箱里收到之后我就可以直接转发到我的kindle邮箱里了，过一阵子就能在kindle里或者<a href>amazon.com&#x2F;myk</a>的管理页面看到这本书被加了进来。</p>
+<p>为什么选择通过邮箱发送呢，因为这样的话就可以把书通过邮箱保存起来，这样哪一天连美服kindle都关闭了的话至少还有一个记录在，我十年前通过这样方式发送过的书也保留在邮箱里了。</p>
+<h2 id="3-4-通过手机app发送"><a href="#3-4-通过手机app发送" class="headerlink" title="3.4 通过手机app发送"></a>3.4 通过手机app发送</h2><p>如果通过手机发送就需要在zlib上点击下载 而不是发送到邮箱</p>
+<img src="/a9f7a166/7c63621774acf852cdcc13525d64aced.jpg" alt="7c63621774acf852cdcc13525d64aced" style="zoom:25%;">
+
+<img src="/a9f7a166/9503d3b5662175fb3922ded11eccda57.jpg" alt="9503d3b5662175fb3922ded11eccda57" style="zoom: 33%;">
+
+<p>通过手机的分享功能 把书分享到kindle的app里 </p>
+<img src="/a9f7a166/b7eb718fa0565c6280ae8abc27209a21.jpg" alt="b7eb718fa0565c6280ae8abc27209a21" style="zoom:33%;">
+
+<p>点击发送 然后稍等片刻这样的话书就会推送到kindle的账户里面了</p>
+<p>我不太喜欢用这种方法，因为会占用手机的空间，而且以后找书的话会没那么方便，发到邮箱里的话 就可以直接通过邮件的搜索功能功能来找到自己之前发送过的书</p>
+<p>3.4通过电脑发送（不够优雅）</p>
+<p>先右击电子书-共享-更多-把发送到kindle添加到菜单里，然后再发送就OK了，虽然这个操作的逻辑比较简便，但是我觉得不够优雅。。，本质上就是电脑版里最新的kindle是移植了手机版的，我认为在观看体验上并不如旧版。</p>
+<img src="/a9f7a166/1747894335640-91447577-ec76-4286-9a87-6e4b65b471e7.jpeg" alt="20250522140014.jpg" style="zoom:50%;">
+
+<img src="/a9f7a166/1747894335401-394c7225-e567-4961-a483-f65bafa1fccb.jpeg" alt="20250522135943.jpg" style="zoom:50%;">
+
+
+
+<img src="/a9f7a166/1747894335351-24059523-5499-4faf-95a6-ab38d5e3b2fa.png" alt="截屏2025-05-22 下午2.00.39.png" style="zoom:50%;">
+
+<img src="/a9f7a166/1747894335466-511a35cb-eb5e-462e-b52d-e359f7a38956.png" alt="截屏2025-05-22 下午2.00.51.png" style="zoom:50%;">
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/" rel="tag"># 电子产品</a>
+              <a href="/tags/kindle/" rel="tag"># kindle</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/fc54a/" rel="prev" title="用windows的电脑发布hexo博客图片会无法显示">
+                  <i class="fa fa-angle-left"></i> 用windows的电脑发布hexo博客图片会无法显示
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/8105b1ad/" rel="next" title="2015款macbookpro换硬盘后升级系统">
+                  2015款macbookpro换硬盘后升级系统 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/a9f7a166/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

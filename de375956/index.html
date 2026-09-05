@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="方法来源于：https:&#x2F;&#x2F;github.com&#x2F;iawia002&#x2F;lux Lux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LUX 在mac下载bilibili视频的方法">
+<meta property="og:url" content="https://www.kulafan.com/de375956/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="方法来源于：https:&#x2F;&#x2F;github.com&#x2F;iawia002&#x2F;lux Lux">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://camo.githubusercontent.com/78a4fa10247f678eb291145bc53ffe48e290eea0faf32f364e44071d4c4bb225/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f69617769613030322f6c75782e7376673f7374796c653d666c61742d737175617265">
+<meta property="og:image" content="https://camo.githubusercontent.com/33e6b3d746fa4acb064906ca94bbd91feb7d938859c5cf3ce4c0bbf87920fb81/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f69617769613030322f6c75782f63692e796d6c3f7374796c653d666c61742d737175617265">
+<meta property="og:image" content="https://camo.githubusercontent.com/3a7da29d4ad5d1b7a566828e453e6c71084da8eb69827ed453e6bc21eb403e66/68747470733a2f2f676f7265706f7274636172642e636f6d2f62616467652f6769746875622e636f6d2f69617769613030322f6c75783f7374796c653d666c61742d737175617265">
+<meta property="og:image" content="https://camo.githubusercontent.com/ef82aa4e1f8861c74f0c15a23fb774548b4b860be47ae9193d39d1ee7663f794/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f69617769613030322f6c75782e7376673f7374796c653d666c61742d737175617265">
+<meta property="og:image" content="https://camo.githubusercontent.com/727ba5de2520019687823e23cddd97bcb50f46e05e69a7e620b821c858225f3a/68747470733a2f2f696d672e736869656c64732e696f2f686f6d65627265772f762f6c75782e7376673f7374796c653d666c61742d737175617265">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_douyin.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_bilibili.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_bcy.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_pixivision.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_youku.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_youtube.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_ixigua.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_iqiyi.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_xinpianchang.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_mgtv.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_tangdou.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_tumblr.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_vimeo.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_facebook.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_douyu.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_miaopai.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_weibo.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_instagram.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_threads.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_twitter.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_qq.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_netease.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_yinyuetai.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_geekbang.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_pornhub.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_xvideos.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_udn.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_tiktok.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_pinterest.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_haokan.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_acfun.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_eporner.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_streamtape.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_hupu.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_huya.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_ximalaya.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_kuaishou.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_reddit.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_vk.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_zhihu.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_rumble.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_xiaohongshu.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_zingmp3.yml/badge.svg">
+<meta property="og:image" content="https://github.com/iawia002/lux/actions/workflows/stream_bitchute.yml/badge.svg">
+<meta property="article:published_time" content="2024-08-09T11:34:29.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:40:37.786Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="媒体">
+<meta property="article:tag" content="视频">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/78a4fa10247f678eb291145bc53ffe48e290eea0faf32f364e44071d4c4bb225/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f69617769613030322f6c75782e7376673f7374796c653d666c61742d737175617265">
+
+
+<link rel="canonical" href="https://www.kulafan.com/de375956/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/de375956/","path":"de375956/","title":"LUX 在mac下载bilibili视频的方法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LUX 在mac下载bilibili视频的方法 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lux"><span class="nav-number">1.</span> <span class="nav-text">Lux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.1.</span> <span class="nav-text">Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prerequisites"><span class="nav-number">1.1.1.</span> <span class="nav-text">Prerequisites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-via-go-install"><span class="nav-number">1.1.2.</span> <span class="nav-text">Install via go install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Homebrew-macOS-only"><span class="nav-number">1.1.3.</span> <span class="nav-text">Homebrew (macOS only)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arch-Linux"><span class="nav-number">1.1.4.</span> <span class="nav-text">Arch Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Void-Linux"><span class="nav-number">1.1.5.</span> <span class="nav-text">Void Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scoop-on-Windows"><span class="nav-number">1.1.6.</span> <span class="nav-text">Scoop on Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chocolatey-on-Windows"><span class="nav-number">1.1.7.</span> <span class="nav-text">Chocolatey on Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cask-on-Windows-macOS-Linux"><span class="nav-number">1.1.8.</span> <span class="nav-text">Cask on Windows&#x2F;macOS&#x2F;Linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-Started"><span class="nav-number">1.2.</span> <span class="nav-text">Getting Started</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Download-a-video"><span class="nav-number">1.2.1.</span> <span class="nav-text">Download a video</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Download-anything-else"><span class="nav-number">1.2.2.</span> <span class="nav-text">Download anything else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Download-playlist"><span class="nav-number">1.2.3.</span> <span class="nav-text">Download playlist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-inputs"><span class="nav-number">1.2.4.</span> <span class="nav-text">Multiple inputs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resume-a-download"><span class="nav-number">1.2.5.</span> <span class="nav-text">Resume a download</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto-retry"><span class="nav-number">1.2.6.</span> <span class="nav-text">Auto retry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies"><span class="nav-number">1.2.7.</span> <span class="nav-text">Cookies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">1.2.8.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Thread"><span class="nav-number">1.2.9.</span> <span class="nav-text">Multi-Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Short-link"><span class="nav-number">1.2.10.</span> <span class="nav-text">Short link</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bilibili"><span class="nav-number">1.2.10.1.</span> <span class="nav-text">bilibili</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-specified-Referrer"><span class="nav-number">1.2.11.</span> <span class="nav-text">Use specified Referrer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Specify-the-output-path-and-name"><span class="nav-number">1.2.12.</span> <span class="nav-text">Specify the output path and name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug-Mode"><span class="nav-number">1.2.13.</span> <span class="nav-text">Debug Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reuse-extracted-data"><span class="nav-number">1.2.14.</span> <span class="nav-text">Reuse extracted data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options"><span class="nav-number">1.2.15.</span> <span class="nav-text">Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Download"><span class="nav-number">1.2.15.1.</span> <span class="nav-text">Download:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network"><span class="nav-number">1.2.15.2.</span> <span class="nav-text">Network:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Playlist"><span class="nav-number">1.2.15.3.</span> <span class="nav-text">Playlist:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filesystem"><span class="nav-number">1.2.15.4.</span> <span class="nav-text">Filesystem:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subtitle"><span class="nav-number">1.2.15.5.</span> <span class="nav-text">Subtitle:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Youku"><span class="nav-number">1.2.15.6.</span> <span class="nav-text">Youku:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aria2"><span class="nav-number">1.2.15.7.</span> <span class="nav-text">aria2:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Supported-Sites"><span class="nav-number">1.3.</span> <span class="nav-text">Supported Sites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Known-issues"><span class="nav-number">1.4.</span> <span class="nav-text">Known issues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E9%85%B7"><span class="nav-number">1.4.1.</span> <span class="nav-text">优酷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A5%BF%E7%93%9C-%E5%A4%B4%E6%9D%A1%E8%A7%86%E9%A2%91"><span class="nav-number">1.4.2.</span> <span class="nav-text">西瓜&#x2F;头条视频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contributing"><span class="nav-number">1.5.</span> <span class="nav-text">Contributing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Authors"><span class="nav-number">1.6.</span> <span class="nav-text">Authors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Similar-projects"><span class="nav-number">1.7.</span> <span class="nav-text">Similar projects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.8.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/de375956/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LUX 在mac下载bilibili视频的方法 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LUX 在mac下载bilibili视频的方法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-08-09 19:34:29" itemprop="dateCreated datePublished" datetime="2024-08-09T19:34:29+08:00">2024-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/de375956/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/de375956/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>方法来源于：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eA==">https://github.com/iawia002/lux</span></p>
+<h1 id="Lux"><a href="#Lux" class="headerlink" title="Lux"></a>Lux</h1><p><em>Let there be Lux!</em></p>
+<p><a target="_blank" rel="noopener" href="https://codecov.io/gh/iawia002/lux"><img src="https://camo.githubusercontent.com/78a4fa10247f678eb291145bc53ffe48e290eea0faf32f364e44071d4c4bb225/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f69617769613030322f6c75782e7376673f7374796c653d666c61742d737175617265" alt="Codecov"> </a><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions"><img src="https://camo.githubusercontent.com/33e6b3d746fa4acb064906ca94bbd91feb7d938859c5cf3ce4c0bbf87920fb81/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f69617769613030322f6c75782f63692e796d6c3f7374796c653d666c61742d737175617265" alt="GitHub Workflow Status"> </a><a target="_blank" rel="noopener" href="https://goreportcard.com/report/github.com/iawia002/lux"><img src="https://camo.githubusercontent.com/3a7da29d4ad5d1b7a566828e453e6c71084da8eb69827ed453e6bc21eb403e66/68747470733a2f2f676f7265706f7274636172642e636f6d2f62616467652f6769746875622e636f6d2f69617769613030322f6c75783f7374796c653d666c61742d737175617265" alt="Go Report Card"> </a><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/releases"><img src="https://camo.githubusercontent.com/ef82aa4e1f8861c74f0c15a23fb774548b4b860be47ae9193d39d1ee7663f794/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f69617769613030322f6c75782e7376673f7374796c653d666c61742d737175617265" alt="GitHub release"> </a><a target="_blank" rel="noopener" href="https://formulae.brew.sh/formula/lux"><img src="https://camo.githubusercontent.com/727ba5de2520019687823e23cddd97bcb50f46e05e69a7e620b821c858225f3a/68747470733a2f2f696d672e736869656c64732e696f2f686f6d65627265772f762f6c75782e7376673f7374796c653d666c61742d737175617265" alt="Homebrew"></a></p>
+<p>👾 Lux is a fast and simple video downloader built with Go.</p>
+<ul>
+<li>Installation<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjcHJlcmVxdWlzaXRlcw==">Prerequisites</span></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/blob/master/README.md#install-via-go-install">Install via <code>go install</code></a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjaG9tZWJyZXctbWFjb3Mtb25seQ==">Homebrew (macOS only)</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjYXJjaC1saW51eA==">Arch Linux</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjdm9pZC1saW51eA==">Void Linux</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjc2Nvb3Atb24td2luZG93cw==">Scoop on Windows</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjY2hvY29sYXRleS1vbi13aW5kb3dz">Chocolatey on Windows</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjY2Fzay1vbi13aW5kb3dzbWFjb3NsaW51eA==">Cask on Windows&#x2F;macOS&#x2F;Linux</span></li>
+</ul>
+</li>
+<li>Getting Started<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZG93bmxvYWQtYS12aWRlbw==">Download a video</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZG93bmxvYWQtYW55dGhpbmctZWxzZQ==">Download anything else</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZG93bmxvYWQtcGxheWxpc3Q=">Download playlist</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjbXVsdGlwbGUtaW5wdXRz">Multiple inputs</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjcmVzdW1lLWEtZG93bmxvYWQ=">Resume a download</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjYXV0by1yZXRyeQ==">Auto retry</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjY29va2llcw==">Cookies</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjcHJveHk=">Proxy</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjbXVsdGktdGhyZWFk">Multi-Thread</span></li>
+<li>Short link<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjYmlsaWJpbGk=">bilibili</span></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjdXNlLXNwZWNpZmllZC1yZWZlcnJlcg==">Use specified Referrer</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjc3BlY2lmeS10aGUtb3V0cHV0LXBhdGgtYW5kLW5hbWU=">Specify the output path and name</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZGVidWctbW9kZQ==">Debug Mode</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjcmV1c2UtZXh0cmFjdGVkLWRhdGE=">Reuse extracted data</span></li>
+<li>Options<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZG93bmxvYWQ=">Download:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjbmV0d29yaw==">Network:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjcGxheWxpc3Q=">Playlist:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjZmlsZXN5c3RlbQ==">Filesystem:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjc3VidGl0bGU=">Subtitle:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjeW91a3U=">Youku:</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjYXJpYTI=">aria2:</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjc3VwcG9ydGVkLXNpdGVz">Supported Sites</span></li>
+<li>Known issues<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjJUU0JUJDJTk4JUU5JTg1JUI3">优酷</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjJUU4JUE1JUJGJUU3JTkzJTlDJUU1JUE0JUI0JUU2JTlEJUExJUU4JUE3JTg2JUU5JUEyJTkx">西瓜&#x2F;头条视频</span></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjY29udHJpYnV0aW5n">Contributing</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjYXV0aG9ycw==">Authors</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjc2ltaWxhci1wcm9qZWN0cw==">Similar projects</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9SRUFETUUubWQjbGljZW5zZQ==">License</span></li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><p>The following dependencies are required and must be installed separately.</p>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuZmZtcGVnLm9yZy8=">FFmpeg</span></strong></li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: FFmpeg does not affect the download, only affects the final file merge.</p>
+</blockquote>
+<h3 id="Install-via-go-install"><a href="#Install-via-go-install" class="headerlink" title="Install via go install"></a>Install via <code>go install</code></h3><p>To install Lux, use <code>go install</code>, or download the binary file from <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9yZWxlYXNlcw==">Releases</span> page.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go install github.com/iawia002/lux@latest</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Homebrew-macOS-only"><a href="#Homebrew-macOS-only" class="headerlink" title="Homebrew (macOS only)"></a>Homebrew (macOS only)</h3><p>For macOS users, you can install <code>lux</code> via:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install lux</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Arch-Linux"><a href="#Arch-Linux" class="headerlink" title="Arch Linux"></a>Arch Linux</h3><p>For Arch Users <span class="exturl" data-url="aHR0cHM6Ly9hdXIuYXJjaGxpbnV4Lm9yZy9wYWNrYWdlcy9sdXgtZGwv">AUR</span> package is available.</p>
+<h3 id="Void-Linux"><a href="#Void-Linux" class="headerlink" title="Void Linux"></a>Void Linux</h3><p>For Void linux users, you can install <code>lux</code> via:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ xbps-install -S lux</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Scoop-on-Windows"><a href="#Scoop-on-Windows" class="headerlink" title="Scoop on Windows"></a><span class="exturl" data-url="aHR0cHM6Ly9zY29vcC5zaC8=">Scoop</span> on Windows</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scoop install lux</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Chocolatey-on-Windows"><a href="#Chocolatey-on-Windows" class="headerlink" title="Chocolatey on Windows"></a><span class="exturl" data-url="aHR0cHM6Ly9jaG9jb2xhdGV5Lm9yZy8=">Chocolatey</span> on Windows</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ choco install lux</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Cask-on-Windows-macOS-Linux"><a href="#Cask-on-Windows-macOS-Linux" class="headerlink" title="Cask on Windows&#x2F;macOS&#x2F;Linux"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2F4ZXRyb3kvY2Fzay5ycw==">Cask</span> on Windows&#x2F;macOS&#x2F;Linux</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cask install github.com/iawia002/lux</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>Usage:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lux [OPTIONS] URL [URL...]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Download-a-video"><a href="#Download-a-video" class="headerlink" title="Download a video"></a>Download a video</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ lux &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span><br><span class="line"></span><br><span class="line"> Site:      YouTube youtube.com</span><br><span class="line"> Title:     Rick Astley - Never Gonna Give You Up (Video)</span><br><span class="line"> Type:      video</span><br><span class="line"> Stream:</span><br><span class="line">     [248]  -------------------</span><br><span class="line">     Quality:         1080p video/webm; codecs=&quot;vp9&quot;</span><br><span class="line">     Size:            63.93 MiB (67038963 Bytes)</span><br><span class="line">     # download with: lux -f 248 ...</span><br><span class="line"></span><br><span class="line"> 41.88 MiB / 63.93 MiB [=================&gt;-------------]  65.51% 4.22 MiB/s 00m05s</span><br></pre></td></tr></table></figure>
+
+
+
+<p>The <code>-i</code> option displays all available quality of video without downloading.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ lux -i &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span><br><span class="line"></span><br><span class="line"> Site:      YouTube youtube.com</span><br><span class="line"> Title:     Rick Astley - Never Gonna Give You Up (Video)</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [248]  -------------------</span><br><span class="line">     Quality:         1080p video/webm; codecs=&quot;vp9&quot;</span><br><span class="line">     Size:            49.29 MiB (51687554 Bytes)</span><br><span class="line">     # download with: lux -f 248 ...</span><br><span class="line"></span><br><span class="line">     [137]  -------------------</span><br><span class="line">     Quality:         1080p video/mp4; codecs=&quot;avc1.640028&quot;</span><br><span class="line">     Size:            43.45 MiB (45564306 Bytes)</span><br><span class="line">     # download with: lux -f 137 ...</span><br><span class="line"></span><br><span class="line">     [398]  -------------------</span><br><span class="line">     Quality:         720p video/mp4; codecs=&quot;av01.0.05M.08&quot;</span><br><span class="line">     Size:            37.12 MiB (38926432 Bytes)</span><br><span class="line">     # download with: lux -f 398 ...</span><br><span class="line"></span><br><span class="line">     [136]  -------------------</span><br><span class="line">     Quality:         720p video/mp4; codecs=&quot;avc1.4d401f&quot;</span><br><span class="line">     Size:            31.34 MiB (32867324 Bytes)</span><br><span class="line">     # download with: lux -f 136 ...</span><br><span class="line"></span><br><span class="line">     [247]  -------------------</span><br><span class="line">     Quality:         720p video/webm; codecs=&quot;vp9&quot;</span><br><span class="line">     Size:            31.03 MiB (32536181 Bytes)</span><br><span class="line">     # download with: lux -f 247 ...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Use <code>lux -f stream &quot;URL&quot;</code> to download a specific stream listed in the output of <code>-i</code> option.</p>
+<h3 id="Download-anything-else"><a href="#Download-anything-else" class="headerlink" title="Download anything else"></a>Download anything else</h3><p>If Lux is provided the URL of a specific resource, then it will be downloaded directly:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ lux &quot;https://img9.bcyimg.com/drawer/15294/post/1799t/1f5a87801a0711e898b12b640777720f.jpg&quot;</span><br><span class="line"></span><br><span class="line">lux doesn&#x27;t support this URL right now, but it will try to download it directly</span><br><span class="line"></span><br><span class="line"> Site:      Universal</span><br><span class="line"> Title:     1f5a87801a0711e898b12b640777720f</span><br><span class="line"> Type:      image/jpeg</span><br><span class="line"> Stream:</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Size:            1.00 MiB (1051042 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line"> 1.00 MiB / 1.00 MiB [===================================] 100.00% 1.21 MiB/s 0s</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Download-playlist"><a href="#Download-playlist" class="headerlink" title="Download playlist"></a>Download playlist</h3><p>The <code>-p</code> option downloads an entire playlist instead of a single video.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ lux -i -p &quot;https://www.bilibili.com/bangumi/play/ep198061&quot;</span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     Doctor X 第四季：第一集</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            845.66 MiB (886738354 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     Doctor X 第四季：第二集</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            930.71 MiB (975919195 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+
+
+<p>You can use the <code>-start</code>, <code>-end</code> or <code>-items</code> option to specify the download range of the list:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-start</span><br><span class="line">    	Playlist video to start at (default 1)</span><br><span class="line">-end</span><br><span class="line">    	Playlist video to end at</span><br><span class="line">-items</span><br><span class="line">    	Playlist video items to download. Separated by commas like: 1,5,6,8-10</span><br></pre></td></tr></table></figure>
+
+
+
+<p>For bilibili playlists only:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-eto</span><br><span class="line">  File name of each bilibili episode doesn&#x27;t include the playlist title</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Multiple-inputs"><a href="#Multiple-inputs" class="headerlink" title="Multiple inputs"></a>Multiple inputs</h3><p>You can also download multiple URLs at once:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ lux -i &quot;https://www.bilibili.com/video/av21877586&quot; &quot;https://www.bilibili.com/video/av21990740&quot;</span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【莓机会了】甜到虐哭的13集单集MAD「我现在什么都不想干,更不想看14集」</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            51.88 MiB (54403767 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【莓救了】甜到虐哭！！！国家队单集MAD-当熟悉的bgm响起，眼泪从脸颊滑下</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            77.63 MiB (81404093 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>These URLs will be downloaded one by one.</p>
+<p>You can also use the <code>-F</code> option to read URLs from file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ lux -F ~/Desktop/u.txt</span><br><span class="line"></span><br><span class="line"> Site:      微博 weibo.com</span><br><span class="line"> Title:     在Google，我们设计什么？ via@阑夕</span><br><span class="line"> Type:      video</span><br><span class="line"> Stream:</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Size:            19.19 MiB (20118196 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line"> 19.19 MiB / 19.19 MiB [=================================] 100.00% 9.69 MiB/s 1s</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+
+
+<p>You can use the <code>-start</code>, <code>-end</code> or <code>-items</code> option to specify the download range of the list:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-start</span><br><span class="line">    	File line to start at (default 1)</span><br><span class="line">-end</span><br><span class="line">    	File line to end at</span><br><span class="line">-items</span><br><span class="line">    	File lines to download. Separated by commas like: 1,5,6,8-10</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Resume-a-download"><a href="#Resume-a-download" class="headerlink" title="Resume a download"></a>Resume a download</h3><p>Ctrl+C interrupts a download.</p>
+<p>A temporary <code>.download</code> file is kept in the output directory. If <code>lux</code> is ran with the same arguments, then the download progress will resume from the last session.</p>
+<h3 id="Auto-retry"><a href="#Auto-retry" class="headerlink" title="Auto retry"></a>Auto retry</h3><p>lux will auto retry when the download failed, you can specify the retry times by <code>-retry</code> option (default is 100).</p>
+<h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>Cookies can be provided to <code>lux</code> with the <code>-c</code> option if they are required for accessing the video.</p>
+<p>Cookies can be the following format or <span class="exturl" data-url="aHR0cHM6Ly9jdXJsLmhheHguc2UvcmZjL2Nvb2tpZV9zcGVjLmh0bWw=">Netscape Cookie</span> format:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=value; name2=value2; ...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Cookies can be a string or a text file, supply cookies in one of the two following ways.</p>
+<p>As a string:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lux -c &quot;name=value; name2=value2&quot; &quot;https://www.bilibili.com/video/av20203945&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>As a text file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lux -c cookies.txt &quot;https://www.bilibili.com/video/av20203945&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p>You can set the HTTP&#x2F;SOCKS5 proxy using environment variables:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ HTTP_PROXY=&quot;http://127.0.0.1:1087/&quot; lux -i &quot;https://www.youtube.com/watch?v=Gnbch2osEeo&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ HTTP_PROXY=&quot;socks5://127.0.0.1:1080/&quot; lux -i &quot;https://www.youtube.com/watch?v=Gnbch2osEeo&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Multi-Thread"><a href="#Multi-Thread" class="headerlink" title="Multi-Thread"></a>Multi-Thread</h3><p>Use <code>--multi-thread</code> or <code>-m</code> multiple threads to download single video.</p>
+<p>Use <code>--thread</code> or <code>-n</code> option to set the number of download threads(default is 10).</p>
+<blockquote>
+<p>Note: If the video has multi fragment, the number of actual download threads will increase.</p>
+<p>For example:</p>
+<ul>
+<li>If <code>-n</code> is set to 10, and the video has 2 fragments, then 20 threads will actually be used.</li>
+<li>If the video has 20 fragments, only 10 fragments are downloaded in the same time, the actual threads count is 100.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Special Tips:</strong> Use too many threads in <strong>mgtv</strong> download will cause HTTP 403 error, we recommend setting the number of threads to <strong>1</strong>.</p>
+</blockquote>
+<h3 id="Short-link"><a href="#Short-link" class="headerlink" title="Short link"></a>Short link</h3><h4 id="bilibili"><a href="#bilibili" class="headerlink" title="bilibili"></a>bilibili</h4><p>You can just use <code>av</code> or <code>ep</code> number to download bilibili’s video:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ lux -i ep198381 av21877586</span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     狐妖小红娘：第79话 南国公主的吃货本色</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            485.23 MiB (508798478 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【莓机会了】甜到虐哭的13集单集MAD「我现在什么都不想干,更不想看14集」</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            51.88 MiB (54403767 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Use-specified-Referrer"><a href="#Use-specified-Referrer" class="headerlink" title="Use specified Referrer"></a>Use specified Referrer</h3><p>A Referrer can be used for the request with the <code>-r</code> option:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lux -r &quot;https://www.bilibili.com/video/av20383055/&quot; &quot;http://cn-scnc1-dx.acgvideo.com/&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Specify-the-output-path-and-name"><a href="#Specify-the-output-path-and-name" class="headerlink" title="Specify the output path and name"></a>Specify the output path and name</h3><p>The <code>-o</code> option sets the path, and <code>-O</code> option sets the name of the downloaded file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lux -o ../ -O &quot;hello&quot; &quot;https://example.com&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Debug-Mode"><a href="#Debug-Mode" class="headerlink" title="Debug Mode"></a>Debug Mode</h3><p>The <code>-d</code> option outputs network request messages:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$ lux -i -d &quot;http://www.bilibili.com/video/av20088587&quot;</span><br><span class="line"></span><br><span class="line">URL:         http://www.bilibili.com/video/av20088587</span><br><span class="line">Method:      GET</span><br><span class="line">Headers:     http.Header&#123;</span><br><span class="line">    &quot;Referer&quot;:         &#123;&quot;http://www.bilibili.com/video/av20088587&quot;&#125;,</span><br><span class="line">    &quot;Accept&quot;:          &#123;&quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;&#125;,</span><br><span class="line">    &quot;Accept-Charset&quot;:  &#123;&quot;UTF-8,*;q=0.5&quot;&#125;,</span><br><span class="line">    &quot;Accept-Encoding&quot;: &#123;&quot;gzip,deflate,sdch&quot;&#125;,</span><br><span class="line">    &quot;Accept-Language&quot;: &#123;&quot;en-US,en;q=0.8&quot;&#125;,</span><br><span class="line">    &quot;User-Agent&quot;:      &#123;&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36&quot;&#125;,</span><br><span class="line">&#125;</span><br><span class="line">Status Code: 200</span><br><span class="line"></span><br><span class="line">URL:         https://interface.bilibili.com/v2/playurl?appkey=84956560bc028eb7&amp;cid=32782944&amp;otype=json&amp;qn=116&amp;quality=116&amp;type=&amp;sign=fb2e3f261fec398652f96d358517e535</span><br><span class="line">Method:      GET</span><br><span class="line">Headers:     http.Header&#123;</span><br><span class="line">    &quot;Accept-Charset&quot;:  &#123;&quot;UTF-8,*;q=0.5&quot;&#125;,</span><br><span class="line">    &quot;Accept-Encoding&quot;: &#123;&quot;gzip,deflate,sdch&quot;&#125;,</span><br><span class="line">    &quot;Accept-Language&quot;: &#123;&quot;en-US,en;q=0.8&quot;&#125;,</span><br><span class="line">    &quot;User-Agent&quot;:      &#123;&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36&quot;&#125;,</span><br><span class="line">    &quot;Referer&quot;:         &#123;&quot;https://interface.bilibili.com/v2/playurl?appkey=84956560bc028eb7&amp;cid=32782944&amp;otype=json&amp;qn=116&amp;quality=116&amp;type=&amp;sign=fb2e3f261fec398652f96d358517e535&quot;&#125;,</span><br><span class="line">    &quot;Accept&quot;:          &#123;&quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;&#125;,</span><br><span class="line">&#125;</span><br><span class="line">Status Code: 200</span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     燃油动力的遥控奥迪R8跑赛道</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [default]  -------------------</span><br><span class="line">     Quality:         高清 1080P</span><br><span class="line">     Size:            64.38 MiB (67504795 Bytes)</span><br><span class="line">     # download with: lux -f default &quot;URL&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Reuse-extracted-data"><a href="#Reuse-extracted-data" class="headerlink" title="Reuse extracted data"></a>Reuse extracted data</h3><p>The <code>-j</code> option will print the extracted data in JSON format.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">$ lux -j &quot;https://www.bilibili.com/video/av20203945&quot;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;site&quot;: &quot;哔哩哔哩 bilibili.com&quot;,</span><br><span class="line">    &quot;title&quot;: &quot;【2018拜年祭单品】相遇day by day&quot;,</span><br><span class="line">    &quot;type&quot;: &quot;video&quot;,</span><br><span class="line">    &quot;streams&quot;: &#123;</span><br><span class="line">        &quot;15&quot;: &#123;</span><br><span class="line">            &quot;urls&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;...&quot;,</span><br><span class="line">                    &quot;size&quot;: 18355205,</span><br><span class="line">                    &quot;ext&quot;: &quot;flv&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;quality&quot;: &quot;流畅 360P&quot;,</span><br><span class="line">            &quot;size&quot;: 18355205</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;32&quot;: &#123;</span><br><span class="line">            &quot;urls&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;...&quot;,</span><br><span class="line">                    &quot;size&quot;: 40058632,</span><br><span class="line">                    &quot;ext&quot;: &quot;flv&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;quality&quot;: &quot;清晰 480P&quot;,</span><br><span class="line">            &quot;size&quot;: 40058632</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;64&quot;: &#123;</span><br><span class="line">            &quot;urls&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;...&quot;,</span><br><span class="line">                    &quot;size&quot;: 82691087,</span><br><span class="line">                    &quot;ext&quot;: &quot;flv&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;quality&quot;: &quot;高清 720P&quot;,</span><br><span class="line">            &quot;size&quot;: 82691087</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;80&quot;: &#123;</span><br><span class="line">            &quot;urls&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;url&quot;: &quot;...&quot;,</span><br><span class="line">                    &quot;size&quot;: 121735559,</span><br><span class="line">                    &quot;ext&quot;: &quot;flv&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;quality&quot;: &quot;高清 1080P&quot;,</span><br><span class="line">            &quot;size&quot;: 121735559</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-i	Information only</span><br><span class="line">-F string</span><br><span class="line">  	URLs file path</span><br><span class="line">-d	Debug mode</span><br><span class="line">-j	Print extracted data</span><br><span class="line">-s	Minimum outputs</span><br><span class="line">-v	Show version</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Download"><a href="#Download" class="headerlink" title="Download:"></a>Download:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-f string</span><br><span class="line">  	Select specific stream to download</span><br><span class="line">-p	Download playlist</span><br><span class="line">-n int</span><br><span class="line">  	The number of download thread (only works for multiple-parts video) (default 10)</span><br><span class="line">-c string</span><br><span class="line">  	Cookie</span><br><span class="line">-r string</span><br><span class="line">  	Use specified Referrer</span><br><span class="line">-cs int</span><br><span class="line">  	HTTP chunk size for downloading (in MB) (default 1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Network"><a href="#Network" class="headerlink" title="Network:"></a>Network:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-retry int</span><br><span class="line">  	How many times to retry when the download failed (default 10)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Playlist"><a href="#Playlist" class="headerlink" title="Playlist:"></a>Playlist:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-start int</span><br><span class="line">  	Playlist video to start at (default 1)</span><br><span class="line">-end int</span><br><span class="line">  	Playlist video to end at</span><br><span class="line">-items string</span><br><span class="line">  	Playlist video items to download. Separated by commas like: 1,5,6,8-10</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Filesystem"><a href="#Filesystem" class="headerlink" title="Filesystem:"></a>Filesystem:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-o string</span><br><span class="line">  	Specify the output path</span><br><span class="line">-O string</span><br><span class="line">  	Specify the output file name</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Subtitle"><a href="#Subtitle" class="headerlink" title="Subtitle:"></a>Subtitle:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-C	Download captions</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Youku"><a href="#Youku" class="headerlink" title="Youku:"></a>Youku:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-ccode string</span><br><span class="line">  	Youku ccode (default &quot;0502&quot;)</span><br><span class="line">-ckey string</span><br><span class="line">  	Youku ckey (default &quot;7B19C0AB12633B22E7FE81271162026020570708D6CC189E4924503C49D243A0DE6CD84A766832C2C99898FC5ED31F3709BB3CDD82C96492E721BDD381735026&quot;)</span><br><span class="line">-password string</span><br><span class="line">  	Youku password</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="aria2"><a href="#aria2" class="headerlink" title="aria2:"></a>aria2:</h4><blockquote>
+<p>Note: If you use aria2 to download, you need to merge the multi-part videos yourself.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-aria2</span><br><span class="line">  	Use Aria2 RPC to download</span><br><span class="line">-aria2addr string</span><br><span class="line">  	Aria2 Address (default &quot;localhost:6800&quot;)</span><br><span class="line">-aria2method string</span><br><span class="line">  	Aria2 Method (default &quot;http&quot;)</span><br><span class="line">-aria2token string</span><br><span class="line">  	Aria2 RPC Token</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Supported-Sites"><a href="#Supported-Sites" class="headerlink" title="Supported Sites"></a>Supported Sites</h2><table>
+<thead>
+<tr>
+<th>Site</th>
+<th>URL</th>
+<th>🎬 Videos</th>
+<th>🌁 Images</th>
+<th>🔊 Audio</th>
+<th>📚 Playlist</th>
+<th>🍪 VIP adaptation</th>
+<th>Build Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>抖音</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuZG91eWluLmNvbS8=">https://www.douyin.com</span></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_douyin.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_douyin.yml/badge.svg" alt="douyin"></a></td>
+</tr>
+<tr>
+<td>哔哩哔哩</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tLw==">https://www.bilibili.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_bilibili.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_bilibili.yml/badge.svg" alt="bilibili"></a></td>
+</tr>
+<tr>
+<td>半次元</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9iY3kubmV0Lw==">https://bcy.net</span></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_bcy.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_bcy.yml/badge.svg" alt="bcy"></a></td>
+</tr>
+<tr>
+<td>pixivision</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucGl4aXZpc2lvbi5uZXQv">https://www.pixivision.net</span></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_pixivision.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_pixivision.yml/badge.svg" alt="pixivision"></a></td>
+</tr>
+<tr>
+<td>优酷</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cueW91a3UuY29tLw==">https://www.youku.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_youku.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_youku.yml/badge.svg" alt="youku"></a></td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20v">https://www.youtube.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_youtube.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_youtube.yml/badge.svg" alt="youtube"></a></td>
+</tr>
+<tr>
+<td>西瓜视频（头条）</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tLnRvdXRpYW8uY29tLw==">https://m.toutiao.com</span>, <span class="exturl" data-url="aHR0cHM6Ly92Lml4aWd1YS5jb20v">https://v.ixigua.com</span>, <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXhpZ3VhLmNvbS8=">https://www.ixigua.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_ixigua.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_ixigua.yml/badge.svg" alt="ixigua"></a></td>
+</tr>
+<tr>
+<td>爱奇艺</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXFpeWkuY29tLw==">https://www.iqiyi.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_iqiyi.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_iqiyi.yml/badge.svg" alt="iqiyi"></a></td>
+</tr>
+<tr>
+<td>新片场</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cueGlucGlhbmNoYW5nLmNvbS8=">https://www.xinpianchang.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_xinpianchang.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_xinpianchang.yml/badge.svg" alt="xinpianchang"></a></td>
+</tr>
+<tr>
+<td>芒果 TV</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cubWd0di5jb20v">https://www.mgtv.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_mgtv.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_mgtv.yml/badge.svg" alt="mgtv"></a></td>
+</tr>
+<tr>
+<td>糖豆广场舞</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cudGFuZ2RvdS5jb20v">https://www.tangdou.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_tangdou.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_tangdou.yml/badge.svg" alt="tangdou"></a></td>
+</tr>
+<tr>
+<td>Tumblr</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cudHVtYmxyLmNvbS8=">https://www.tumblr.com</span></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_tumblr.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_tumblr.yml/badge.svg" alt="tumblr"></a></td>
+</tr>
+<tr>
+<td>Vimeo</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly92aW1lby5jb20v">https://vimeo.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_vimeo.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_vimeo.yml/badge.svg" alt="vimeo"></a></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9mYWNlYm9vay5jb20v">https://facebook.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_facebook.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_facebook.yml/badge.svg" alt="facebook"></a></td>
+</tr>
+<tr>
+<td>斗鱼视频</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly92LmRvdXl1LmNvbS8=">https://v.douyu.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_douyu.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_douyu.yml/badge.svg" alt="douyu"></a></td>
+</tr>
+<tr>
+<td>秒拍</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cubWlhb3BhaS5jb20v">https://www.miaopai.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_miaopai.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_miaopai.yml/badge.svg" alt="miaopai"></a></td>
+</tr>
+<tr>
+<td>微博</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93ZWliby5jb20v">https://weibo.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_weibo.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_weibo.yml/badge.svg" alt="weibo"></a></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8=">https://www.instagram.com</span></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_instagram.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_instagram.yml/badge.svg" alt="instagram"></a></td>
+</tr>
+<tr>
+<td>Threads</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cudGhyZWFkcy5uZXQv">https://www.threads.net</span></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_threads.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_threads.yml/badge.svg" alt="threads"></a></td>
+</tr>
+<tr>
+<td>Twitter</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS8=">https://twitter.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_twitter.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_twitter.yml/badge.svg" alt="twitter"></a></td>
+</tr>
+<tr>
+<td>腾讯视频</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly92LnFxLmNvbS8=">https://v.qq.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_qq.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_qq.yml/badge.svg" alt="qq"></a></td>
+</tr>
+<tr>
+<td>网易云音乐</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLw==">https://music.163.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_netease.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_netease.yml/badge.svg" alt="netease"></a></td>
+</tr>
+<tr>
+<td>音悦台</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly95aW55dWV0YWkuY29tLw==">https://yinyuetai.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_yinyuetai.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_yinyuetai.yml/badge.svg" alt="yinyuetai"></a></td>
+</tr>
+<tr>
+<td>极客时间</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly90aW1lLmdlZWtiYW5nLm9yZy8=">https://time.geekbang.org</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_geekbang.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_geekbang.yml/badge.svg" alt="geekbang"></a></td>
+</tr>
+<tr>
+<td>Pornhub</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9wb3JuaHViLmNvbS8=">https://pornhub.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_pornhub.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_pornhub.yml/badge.svg" alt="pornhub"></a></td>
+</tr>
+<tr>
+<td>XVIDEOS</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly94dmlkZW9zLmNvbS8=">https://xvideos.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_xvideos.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_xvideos.yml/badge.svg" alt="xvideos"></a></td>
+</tr>
+<tr>
+<td>聯合新聞網</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly91ZG4uY29tLw==">https://udn.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_udn.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_udn.yml/badge.svg" alt="udn"></a></td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS8=">https://www.tiktok.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_tiktok.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_tiktok.yml/badge.svg" alt="tiktok"></a></td>
+</tr>
+<tr>
+<td>Pinterest</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucGludGVyZXN0LmNvbS8=">https://www.pinterest.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_pinterest.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_pinterest.yml/badge.svg" alt="pinterest"></a></td>
+</tr>
+<tr>
+<td>好看视频</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9oYW9rYW4uYmFpZHUuY29tLw==">https://haokan.baidu.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_haokan.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_haokan.yml/badge.svg" alt="haokan"></a></td>
+</tr>
+<tr>
+<td>AcFun</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNmdW4uY24v">https://www.acfun.cn</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_acfun.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_acfun.yml/badge.svg" alt="acfun"></a></td>
+</tr>
+<tr>
+<td>Eporner</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9lcG9ybmVyLmNvbS8=">https://eporner.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_eporner.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_eporner.yml/badge.svg" alt="eporner"></a></td>
+</tr>
+<tr>
+<td>StreamTape</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9zdHJlYW10YXBlLmNvbS8=">https://streamtape.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_streamtape.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_streamtape.yml/badge.svg" alt="streamtape"></a></td>
+</tr>
+<tr>
+<td>虎扑</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9odXB1LmNvbS8=">https://hupu.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_hupu.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_hupu.yml/badge.svg" alt="hupu"></a></td>
+</tr>
+<tr>
+<td>虎牙视频</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly92Lmh1eWEuY29tLw==">https://v.huya.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_huya.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_huya.yml/badge.svg" alt="huya"></a></td>
+</tr>
+<tr>
+<td>喜马拉雅</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cueGltYWxheWEuY29tLw==">https://www.ximalaya.com</span></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_ximalaya.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_ximalaya.yml/badge.svg" alt="ximalaya"></a></td>
+</tr>
+<tr>
+<td>快手</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cua3VhaXNob3UuY29tLw==">https://www.kuaishou.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_kuaishou.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_kuaishou.yml/badge.svg" alt="kuaishou"></a></td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cucmVkZGl0LmNvbS8=">https://www.reddit.com</span></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_reddit.yml"><img src="https://github.com/iawia002/lux/actions/workflows/stream_reddit.yml/badge.svg" alt="reddit"></a></td>
+</tr>
+<tr>
+<td>VKontakte</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly92ay5jb20v">https://vk.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_vk.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_vk.yml/badge.svg" alt="vk"></a></td>
+</tr>
+<tr>
+<td>知乎</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly96aGlodS5jb20v">https://zhihu.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_zhihu.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_zhihu.yml/badge.svg" alt="zhihu"></a></td>
+</tr>
+<tr>
+<td>Rumble</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly9ydW1ibGUuY29tLw==">https://rumble.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_rumble.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_rumble.yml/badge.svg" alt="rumble"></a></td>
+</tr>
+<tr>
+<td>小红书</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly94aWFvaG9uZ3NodS5jb20v">https://xiaohongshu.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_xiaohongshu.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_xiaohongshu.yml/badge.svg" alt="xiaohongshu"></a></td>
+</tr>
+<tr>
+<td>Zing MP3</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly96aW5nbXAzLnZuLw==">https://zingmp3.vn</span></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_zingmp3.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_zingmp3.yml/badge.svg" alt="zingmp3"></a></td>
+</tr>
+<tr>
+<td>Bitchute</td>
+<td><span class="exturl" data-url="aHR0cHM6Ly93d3cuYml0Y2h1dGUuY29tLw==">https://www.bitchute.com</span></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iawia002/lux/actions/workflows/stream_bitchute.yml/"><img src="https://github.com/iawia002/lux/actions/workflows/stream_bitchute.yml/badge.svg" alt="bitchute"></a></td>
+</tr>
+</tbody></table>
+<h2 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h2><h3 id="优酷"><a href="#优酷" class="headerlink" title="优酷"></a>优酷</h3><p>优酷的 <code>ccode</code> 经常变化导致 lux 不可用，如果你知道有新的可用的 <code>ccode</code>，可以直接使用 <code>lux -ccode ...</code> 而不用等待 lux 更新（当然，也欢迎你给我们提一个 Pull request 来更新默认的 <code>ccode</code>）</p>
+<p>最好是每次下载都附带登录过的 Cookie 以避免部分 <code>ccode</code> 的问题</p>
+<h3 id="西瓜-头条视频"><a href="#西瓜-头条视频" class="headerlink" title="西瓜&#x2F;头条视频"></a>西瓜&#x2F;头条视频</h3><p>西瓜&#x2F;头条视频必须带 Cookie 才能下载成功，西瓜和头条可共用西瓜视频的 Cookie，Cookie 的有效期可能较短，下载失败就更新 Cookie 尝试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lux -c &quot;msToken=yoEh0-qLUq4obZ8Sfxsem_CxCo9R3NM6ViTrWaRcM1...; ttwid=1%7C...&quot; &quot;https://m.toutiao.com/is/iYbTfJ79/&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h2><p>Lux is an open source project and built on the top of open-source projects. Check out the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ibG9iL21hc3Rlci9DT05UUklCVVRJTkcubWQ=">Contributing Guide</span> to get started.</p>
+<h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><p>Code with ❤️ by <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAy">iawia002</span> and lovely <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lhd2lhMDAyL2x1eC9ncmFwaHMvY29udHJpYnV0b3Jz">contributors</span></p>
+<h2 id="Similar-projects"><a href="#Similar-projects" class="headerlink" title="Similar projects"></a>Similar projects</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2trZGFpL3lvdXR1YmU=">youtube</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JnMy95b3V0dWJlLWRs">youtube-dl</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NvaW1vcnQveW91LWdldA==">you-get</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3J5bGlvL3l0ZGw=">ytdl</span></li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
+<p>Copyright (c) 2018-present, iawia002</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/Mac/" rel="tag"># Mac</a>
+              <a href="/tags/%E5%AA%92%E4%BD%93/" rel="tag"># 媒体</a>
+              <a href="/tags/%E8%A7%86%E9%A2%91/" rel="tag"># 视频</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/94edb7d2/" rel="prev" title="Cloudflare加速GitHub部署hexo博客后无法访问">
+                  <i class="fa fa-angle-left"></i> Cloudflare加速GitHub部署hexo博客后无法访问
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/3bc9b874/" rel="next" title="FinalCutPro插件路径">
+                  FinalCutPro插件路径 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/de375956/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

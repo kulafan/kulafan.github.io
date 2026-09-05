@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Kulafan_logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Kulafan_logo.jpg">
+  <link rel="mask-icon" href="/images/Kulafan_logo.jpg" color="#222">
+  <meta name="baidu-site-verification" content="psJQdhD3vVjZzRsQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、下载微信公众号的文章首先使用某个工具https:&#x2F;&#x2F;github.com&#x2F;qiye45&#x2F;wechatDownload">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把公众号内容抓取到hexo博客上">
+<meta property="og:url" content="https://www.kulafan.com/2ac12299/index.html">
+<meta property="og:site_name" content="Kulafan&#39;s Blog">
+<meta property="og:description" content="一、下载微信公众号的文章首先使用某个工具https:&#x2F;&#x2F;github.com&#x2F;qiye45&#x2F;wechatDownload">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-13T18:56:00.000Z">
+<meta property="article:modified_time" content="2026-09-05T18:41:27.539Z">
+<meta property="article:author" content="kulafan">
+<meta property="article:tag" content="折腾">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.kulafan.com/2ac12299/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.kulafan.com/2ac12299/","path":"2ac12299/","title":"把公众号内容抓取到hexo博客上"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>把公众号内容抓取到hexo博客上 | Kulafan's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline.kulafan.com">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Kulafan's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kulafan's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">库拉饭博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9A%84%E6%96%87%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">一、下载微信公众号的文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、转换格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text">三、保存图片</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
+  <p class="site-author-name" itemprop="name">kulafan</p>
+  <div class="site-description" itemprop="description">一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFAa3VsYWZhbi5jb20=" title="E-Mail → mailto:a@kulafan.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==" title="Travelling → https:&#x2F;&#x2F;www.travellings.cn&#x2F;go.html"><i class="fa fa-train-subway fa-fw"></i>Travelling</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuYm95b3VxdWFuLmNvbS9wbGFuZXQtc2h1dHRsZQ==" title="星球穿梭 → https:&#x2F;&#x2F;www.boyouquan.com&#x2F;planet-shuttle"><i class="fa fa-globe fa-fw"></i>星球穿梭</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2ac12299/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="一个喜欢折腾电子产品的影视工作者 分享生活 还有一些关于摄影 电影 数码的内容">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="把公众号内容抓取到hexo博客上 | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          把公众号内容抓取到hexo博客上
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-07-14 02:56:00" itemprop="dateCreated datePublished" datetime="2025-07-14T02:56:00+08:00">2025-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BLOG/" itemprop="url" rel="index"><span itemprop="name">BLOG</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2ac12299/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2ac12299/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="一、下载微信公众号的文章"><a href="#一、下载微信公众号的文章" class="headerlink" title="一、下载微信公众号的文章"></a>一、下载微信公众号的文章</h1><p>首先使用某个工具<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3FpeWU0NS93ZWNoYXREb3dubG9hZA==">https://github.com/qiye45/wechatDownload</span> </p>
+<p>把微信公众号的文章全部下载下来，虽然支持md格式，但是有以下问题：</p>
+<ol>
+<li>格式不符合hexo博客的标准</li>
+<li>md文档内的图片地址是保存在微信公众号上面的，需要迁移到本地保存</li>
+</ol>
+<h1 id="二、转换格式"><a href="#二、转换格式" class="headerlink" title="二、转换格式"></a>二、转换格式</h1><p>第一个问题很好解决，可以设置脚本，在每个md文件头加入标题和日期，至于tag这些就暂时不考虑了。</p>
+<p>复制以下代码 粘贴到convert_to_hexo.bat 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">chcp 65001 &gt;nul</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 正在转换公众号文章为Hexo格式...</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"></span><br><span class="line">:: 创建输出目录</span><br><span class="line"><span class="keyword">if</span> not exist <span class="string">&quot;hexo_posts&quot;</span> <span class="built_in">mkdir</span> <span class="string">&quot;hexo_posts&quot;</span></span><br><span class="line"><span class="keyword">if</span> not exist <span class="string">&quot;post_images&quot;</span> <span class="built_in">mkdir</span> <span class="string">&quot;post_images&quot;</span></span><br><span class="line"></span><br><span class="line">:: 临时文件</span><br><span class="line"><span class="built_in">set</span> <span class="string">&quot;temp_file=hexo_temp.md&quot;</span></span><br><span class="line"></span><br><span class="line">:: 处理所有.md文件</span><br><span class="line"><span class="keyword">for</span> %%f <span class="keyword">in</span> (*.md) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">set</span> <span class="string">&quot;fullname=%%f&quot;</span></span><br><span class="line">    <span class="built_in">set</span> <span class="string">&quot;name=%%~nf&quot;</span></span><br><span class="line">    </span><br><span class="line">    :: 提取日期部分(前8位数字)</span><br><span class="line">    <span class="built_in">set</span> <span class="string">&quot;fdate=!name:~0,8!&quot;</span></span><br><span class="line">    </span><br><span class="line">    :: 验证是否为有效日期</span><br><span class="line">    <span class="built_in">echo</span> !fdate!|findstr /r <span class="string">&quot;^[0-9][0-9][0-9][0-9][0-1][0-9][0-3][0-9]$&quot;</span>&gt;nul</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> errorlevel 1 (</span><br><span class="line">        <span class="built_in">echo</span> 文件 [!name!] 跳过 - 无效的日期格式</span><br><span class="line">    ) <span class="keyword">else</span> (</span><br><span class="line">        :: 提取标题部分(第9个字符开始)</span><br><span class="line">        <span class="built_in">set</span> <span class="string">&quot;title=!name:~8!&quot;</span></span><br><span class="line">        </span><br><span class="line">        :: 创建对应的图片目录</span><br><span class="line">        <span class="keyword">if</span> not exist <span class="string">&quot;post_images\!name!&quot;</span> <span class="built_in">mkdir</span> <span class="string">&quot;post_images\!name!&quot;</span></span><br><span class="line">        </span><br><span class="line">        :: 格式化日期为YYYY-MM-DD</span><br><span class="line">        <span class="built_in">set</span> <span class="string">&quot;hexo_date=!fdate:~0,4!-!fdate:~4,2!-!fdate:~6,2!&quot;</span></span><br><span class="line">        </span><br><span class="line">        :: 生成临时文件（Front Matter部分）</span><br><span class="line">        (</span><br><span class="line">            <span class="built_in">echo</span> ---</span><br><span class="line">            <span class="built_in">echo</span> title: !title!</span><br><span class="line">            <span class="built_in">echo</span> <span class="built_in">date</span>: !hexo_date! 12:00:00</span><br><span class="line">            <span class="built_in">echo</span> tags: []</span><br><span class="line">            <span class="built_in">echo</span> categories: []</span><br><span class="line">            <span class="built_in">echo</span> ---</span><br><span class="line">            <span class="built_in">echo</span>.</span><br><span class="line">        ) &gt; <span class="string">&quot;%temp_file%&quot;</span></span><br><span class="line">        </span><br><span class="line">        :: 合并Front Matter和原文件内容</span><br><span class="line">        <span class="built_in">type</span> <span class="string">&quot;%temp_file%&quot;</span> <span class="string">&quot;!fullname!&quot;</span> &gt; <span class="string">&quot;hexo_posts\!fullname!&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">echo</span> 已转换: !name!</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">:: 清理临时文件</span><br><span class="line"><span class="keyword">if</span> exist <span class="string">&quot;%temp_file%&quot;</span> del <span class="string">&quot;%temp_file%&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 转换完成！共处理了 %%~f 个文件</span><br><span class="line"><span class="built_in">echo</span> Hexo格式文章保存在 hexo_posts 文件夹</span><br><span class="line"><span class="built_in">echo</span> 图片文件夹保存在 post_images 文件夹</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、保存图片"><a href="#三、保存图片" class="headerlink" title="三、保存图片"></a>三、保存图片</h1><p>第二个问题的思路就是把每个md文件的图片保存到本地，并且重新命名，命名之后再修改md文档里插入的图片路径。通过node.js脚本来实现。</p>
+<p>处理图片时又遇到如下问题</p>
+<p>1.后面获取的图片会把前面的图片覆盖掉</p>
+<p>2.会把头像信息也获取进来，而且每个文章的图片文件夹是独立的，意味着每个公众号下的头像都会重复保存一次</p>
+<p>复制以下代码 粘贴到 download-images4.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&#x27;https&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> crypto = <span class="built_in">require</span>(<span class="string">&#x27;crypto&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">IMG_REGEX</span> = <span class="regexp">/!\[.*?\]\((http.*?)\)/g</span>;</span><br><span class="line"><span class="keyword">const</span> mimeExtensions = &#123;</span><br><span class="line">  <span class="string">&#x27;image/jpeg&#x27;</span>: <span class="string">&#x27;.jpg&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/png&#x27;</span>: <span class="string">&#x27;.png&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/gif&#x27;</span>: <span class="string">&#x27;.gif&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/webp&#x27;</span>: <span class="string">&#x27;.webp&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/svg+xml&#x27;</span>: <span class="string">&#x27;.svg&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/bmp&#x27;</span>: <span class="string">&#x27;.bmp&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;image/tiff&#x27;</span>: <span class="string">&#x27;.tiff&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getExtensionFromMime</span>(<span class="params">mime</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> mimeExtensions[mime] || <span class="string">&#x27;.jpg&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">downloadImage</span>(<span class="params">url, savePath</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> mod = url.<span class="title function_">startsWith</span>(<span class="string">&#x27;https&#x27;</span>) ? https : http;</span><br><span class="line">    mod.<span class="title function_">get</span>(url, <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.<span class="property">statusCode</span> !== <span class="number">200</span>) <span class="keyword">return</span> <span class="title function_">reject</span>(<span class="string">`状态码 <span class="subst">$&#123;res.statusCode&#125;</span>`</span>);</span><br><span class="line">      <span class="keyword">const</span> ext = <span class="title function_">getExtensionFromMime</span>(res.<span class="property">headers</span>[<span class="string">&#x27;content-type&#x27;</span>] || <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">      <span class="keyword">const</span> filePath = savePath + ext;</span><br><span class="line">      <span class="keyword">const</span> fileStream = fs.<span class="title function_">createWriteStream</span>(filePath);</span><br><span class="line">      res.<span class="title function_">pipe</span>(fileStream);</span><br><span class="line">      fileStream.<span class="title function_">on</span>(<span class="string">&#x27;finish&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        fileStream.<span class="title function_">close</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(filePath));</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;).<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, reject);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">collectImageURLs</span>(<span class="params">mdFiles</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> urlCountMap = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">  <span class="keyword">const</span> fileMap = <span class="keyword">new</span> <span class="title class_">Map</span>(); <span class="comment">// 记录每个文件里有哪些 url</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> file <span class="keyword">of</span> mdFiles) &#123;</span><br><span class="line">    <span class="keyword">const</span> content = fs.<span class="title function_">readFileSync</span>(file, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> urls = [...content.<span class="title function_">matchAll</span>(<span class="variable constant_">IMG_REGEX</span>)].<span class="title function_">map</span>(<span class="function"><span class="params">m</span> =&gt;</span> m[<span class="number">1</span>]);</span><br><span class="line">    fileMap.<span class="title function_">set</span>(file, urls);</span><br><span class="line">    urls.<span class="title function_">forEach</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!url.<span class="title function_">startsWith</span>(<span class="string">&#x27;http&#x27;</span>)) <span class="keyword">return</span>;</span><br><span class="line">      urlCountMap.<span class="title function_">set</span>(url, (urlCountMap.<span class="title function_">get</span>(url) || <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123; urlCountMap, fileMap &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">processFiles</span>(<span class="params">mdFiles, urlCountMap, fileMap</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> sharedDir = <span class="string">&#x27;./shared&#x27;</span>;</span><br><span class="line">  <span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(sharedDir)) fs.<span class="title function_">mkdirSync</span>(sharedDir);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> sharedMap = <span class="keyword">new</span> <span class="title class_">Map</span>(); <span class="comment">// URL -&gt; local name</span></span><br><span class="line">  <span class="keyword">let</span> sharedIndex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> file <span class="keyword">of</span> mdFiles) &#123;</span><br><span class="line">    <span class="keyword">const</span> content = fs.<span class="title function_">readFileSync</span>(file, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> baseName = path.<span class="title function_">basename</span>(file, <span class="string">&#x27;.md&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> folder = <span class="string">`./<span class="subst">$&#123;baseName&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(folder)) fs.<span class="title function_">mkdirSync</span>(folder);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> newContent = content;</span><br><span class="line">    <span class="keyword">let</span> uniqueIndex = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> urls = fileMap.<span class="title function_">get</span>(file);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> url <span class="keyword">of</span> urls) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!url.<span class="title function_">startsWith</span>(<span class="string">&#x27;http&#x27;</span>)) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> newPath = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (urlCountMap.<span class="title function_">get</span>(url) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// 多处使用的图片</span></span><br><span class="line">        <span class="keyword">if</span> (!sharedMap.<span class="title function_">has</span>(url)) &#123;</span><br><span class="line">          <span class="keyword">const</span> fileName = <span class="string">`img<span class="subst">$&#123;sharedIndex++&#125;</span>`</span>;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> savedPath = <span class="keyword">await</span> <span class="title function_">downloadImage</span>(url, path.<span class="title function_">join</span>(sharedDir, fileName));</span><br><span class="line">            <span class="keyword">const</span> relPath = <span class="string">`shared/<span class="subst">$&#123;path.basename(savedPath)&#125;</span>`</span>;</span><br><span class="line">            sharedMap.<span class="title function_">set</span>(url, relPath);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`✅ [共享] 下载 <span class="subst">$&#123;url&#125;</span> -&gt; <span class="subst">$&#123;relPath&#125;</span>`</span>);</span><br><span class="line">          &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`❌ 下载失败（共享）<span class="subst">$&#123;url&#125;</span>: <span class="subst">$&#123;err&#125;</span>`</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        newPath = sharedMap.<span class="title function_">get</span>(url);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 独占图片</span></span><br><span class="line">        <span class="keyword">const</span> fileName = <span class="string">`img<span class="subst">$&#123;uniqueIndex++&#125;</span>`</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> savedPath = <span class="keyword">await</span> <span class="title function_">downloadImage</span>(url, path.<span class="title function_">join</span>(folder, fileName));</span><br><span class="line">          newPath = <span class="string">`<span class="subst">$&#123;baseName&#125;</span>/<span class="subst">$&#123;path.basename(savedPath)&#125;</span>`</span>;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`✅ [独占] 下载 <span class="subst">$&#123;url&#125;</span> -&gt; <span class="subst">$&#123;newPath&#125;</span>`</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`❌ 下载失败（独占）<span class="subst">$&#123;url&#125;</span>: <span class="subst">$&#123;err&#125;</span>`</span>);</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 替换 md 内容</span></span><br><span class="line">      newContent = newContent.<span class="title function_">replaceAll</span>(url, newPath);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fs.<span class="title function_">writeFileSync</span>(file, newContent, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`📄 完成处理：<span class="subst">$&#123;file&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="title function_">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> mdFiles = fs.<span class="title function_">readdirSync</span>(<span class="string">&#x27;.&#x27;</span>).<span class="title function_">filter</span>(<span class="function"><span class="params">f</span> =&gt;</span> f.<span class="title function_">endsWith</span>(<span class="string">&#x27;.md&#x27;</span>));</span><br><span class="line">  <span class="keyword">const</span> &#123; urlCountMap, fileMap &#125; = <span class="title function_">collectImageURLs</span>(mdFiles);</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">processFiles</span>(mdFiles, urlCountMap, fileMap);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`✅ 全部完成！`</span>);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2d8342c4/" rel="prev" title="waline 访客记录">
+                  <i class="fa fa-angle-left"></i> waline 访客记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/9f14260e/" rel="next" title="公司空降新领导,把她的部门干解散了——与朋友的一次撸猫聊天">
+                  公司空降新领导,把她的部门干解散了——与朋友的一次撸猫聊天 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-brands fa-steam-symbol"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kulafan</span>
+  </div>
+    <div style="text-align:center; font-size: 14px;">
+
+<!-- 
+      <div style="margin-top: 10px;">
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+      </div>
+      
+      <span>
+        <a href="https://finicounter.eu.org/" target="_blank">Total Pageview:</a>
+        <span id="finicount_views" style="display:inline;padding-left:5px;"></span>
+      </span>
+      
+      <span style="margin-left: 20px;">
+        <a href="https://icp.gov.moe/?keyword=20251199" target="_blank">萌ICP备20251199号</a>
+      </span>
+
+-->
+
+<!-- 页脚统计信息容器 -->
+<div class="footer-stats">
+  <!-- 访问量统计 -->
+  <div class="stats-item">
+  <i class="fa-solid fa-chart-simple"></i>
+    <a href="https://finicounter.eu.org/" target="_blank" >
+      <span class="stats-text">Total Pageview: </span>
+    </a>
+    <span id="finicount_views" ></span>
+  </div>
+
+  <!-- 运行时间统计 -->
+  <div class="stats-item">
+  <i class="fa-duotone fa-solid fa-earth-americas"></i>
+    <span id="timeDate" class="stats-text">载入天数...</span>
+  </div>
+
+  <!-- ICP备案信息 -->
+  <div class="stats-item">
+  <i class="fa-notdog fa-solid fa-shield"></i>
+    <a href="https://icp.gov.moe/?keyword=20251199" target="_blank" >
+      <span class="stats-text">萌ICP备20251199号</span>
+    </a>
+  </div>
+
+    <div class="stats-item">
+  <img src="https://icp.redcha.cn/static/picture/icplogoi.png" style="height: 16px;">
+    <a href="https://icp.redcha.cn/beian/ICP-2025080015.html" target="_blank" >
+      <span class="stats-text">茶ICP备2025080015号</span>
+    </a>
+  </div>
+
+  <!-- 样式美化 -->
+  <style>
+    .footer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 1px 0;
+      font-size: 13px;
+      color: #666; /* 基础文本颜色 */
+      margin-top: 1px;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .stats-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .stats-link:hover {
+      color: #2c3e50; /* hover时加深颜色 */
+      text-decoration: underline;
+    }
+
+    .stats-value {
+      color: #3498db; /* 数值突出显示 */
+      font-weight: 500;
+    }
+
+    /* 适配深色模式（如果需要） */
+    @media (prefers-color-scheme: dark) {
+      .footer-stats {
+        color: #ccc;
+        border-top-color: #333;
+      }
+      .stats-link {
+        color: #ccc;
+      }
+      .stats-link:hover {
+        color: #fff;
+      }
+      .stats-value {
+        color: #4fa3e0;
+      }
+    }
+  </style>
+</div>
+
+
+
+<!-- 以下为功能区 -->
+
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("2017-10-19T10:00:00"); // 此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
+        }
+        setInterval("createtime()", 250);
+      </script>
+    </div>
+  
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline.kulafan.com","cssUrl":"/css/waline.css","commentCount":true,"pageview":false,"locale":{"placeholder":"无需登录·请留下邮箱以接收回复·来说两句吧~"},"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"infinite":true,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","login":"enable","dark":"auto","el":"#waline","comment":true,"path":"/2ac12299/"}</script>
+<link rel="stylesheet" href="/css/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
